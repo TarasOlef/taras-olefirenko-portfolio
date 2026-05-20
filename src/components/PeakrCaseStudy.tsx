@@ -34,6 +34,8 @@ const stack = [
   "Release",
 ];
 
+const googlePlayUrl = "https://play.google.com/store/apps/details?id=com.taras.peakr";
+
 const solutionCards = [
   {
     title: "Registro sencillo",
@@ -261,10 +263,12 @@ function ProjectHero() {
             </div>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <a
-                href="#peakr-en-uso"
+                href={googlePlayUrl}
+                target="_blank"
+                rel="noreferrer"
                 className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-cyan-200 px-5 text-sm font-semibold text-slate-950 transition hover:bg-white focus:outline-none focus:ring-2 focus:ring-cyan-200"
               >
-                Ver producto
+                Ver en Google Play
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
               <a

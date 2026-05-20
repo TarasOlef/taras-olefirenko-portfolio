@@ -44,7 +44,7 @@ export const projects: Project[] = [
     accent: "cyan",
     links: {
       caseStudy: "/projects/peakr",
-      live: "#",
+      live: "https://play.google.com/store/apps/details?id=com.taras.peakr",
     },
   },
   {
