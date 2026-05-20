@@ -7,7 +7,7 @@ import {
   useSpring,
   type MotionStyle,
 } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowDown, ArrowRight } from "lucide-react";
 import type { ReactNode, MouseEvent } from "react";
 
 type MagneticButtonProps = {
@@ -44,6 +44,8 @@ export function MagneticButton({
   const styles: MotionStyle | undefined = reducedMotion
     ? undefined
     : { x: springX, y: springY };
+  const Icon = href.startsWith("#") ? ArrowDown : ArrowRight;
+  const hasInlineArrow = typeof children === "string" && children.includes("↓");
 
   return (
     <motion.a
@@ -61,7 +63,14 @@ export function MagneticButton({
       }
     >
       {children}
-      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+      {hasInlineArrow ? null : (
+        <Icon
+          className={`h-4 w-4 transition-transform ${
+            href.startsWith("#") ? "group-hover:translate-y-0.5" : "group-hover:translate-x-0.5"
+          }`}
+          aria-hidden="true"
+        />
+      )}
     </motion.a>
   );
 }

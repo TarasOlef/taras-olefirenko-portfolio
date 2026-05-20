@@ -73,7 +73,7 @@ export function Hero() {
             variants={fadeUp}
             className="mt-9 flex flex-col gap-3 sm:flex-row"
           >
-            <MagneticButton href="#proyectos">Ver proyectos reales</MagneticButton>
+            <MagneticButton href="#proyectos">Ver proyectos reales ↓</MagneticButton>
             <MagneticButton href={profile.cv} variant="secondary" download>
               Descargar CV
             </MagneticButton>

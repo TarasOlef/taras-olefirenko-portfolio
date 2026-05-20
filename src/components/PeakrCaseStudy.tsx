@@ -99,7 +99,7 @@ const screenshotStory = [
   {
     eyebrow: "01 / Claridad",
     title: "Complejidad fuera. Claridad dentro.",
-    text: "Calorías, hábitos y progreso en una vista simple.",
+    text: "Diseñé PEAKR para que registrar calorías, hábitos y progreso fuese simple, visible y fácil de mantener.",
     src: "/projects/peakr/peakr-home.png",
     alt: "Pantalla home de PEAKR con calorías, macros, agua y registro reciente",
     chips: ["Calorías", "Hábitos", "Progreso"],
@@ -107,7 +107,7 @@ const screenshotStory = [
   {
     eyebrow: "02 / IA aplicada",
     title: "IA útil, no decorativa.",
-    text: "Escanear comida reduce pasos y mejora el input.",
+    text: "La cámara y el análisis visual convierten el registro de comida en una acción mucho más rápida, natural y práctica.",
     src: "/projects/peakr/peakr-camera.png",
     alt: "Pantalla de cámara de PEAKR escaneando comida con etiquetas visuales",
     chips: ["Escaneo visual", "Menos fricción", "IA aplicada"],
@@ -115,7 +115,7 @@ const screenshotStory = [
   {
     eyebrow: "03 / Resultado",
     title: "Del dato al cambio real.",
-    text: "El progreso visible refuerza adherencia y motivación.",
+    text: "PEAKR no solo registra información: ayuda a sostener hábitos, visualizar avance y reforzar el progreso real del usuario.",
     src: "/projects/peakr/peakr-transformation.png",
     alt: "Pantalla de progreso de PEAKR con transformación antes y después",
     chips: ["Antes / después", "Motivación", "Resultado"],
@@ -261,10 +261,10 @@ function ProjectHero() {
             </div>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <a
-                href="#"
+                href="#peakr-en-uso"
                 className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-cyan-200 px-5 text-sm font-semibold text-slate-950 transition hover:bg-white focus:outline-none focus:ring-2 focus:ring-cyan-200"
               >
-                Ver en Google Play
+                Ver producto
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
               <a
@@ -278,7 +278,7 @@ function ProjectHero() {
 
           <Reveal delay={0.08} className="relative">
             <div className="absolute inset-x-16 top-16 h-72 rounded-full bg-cyan-200/10 blur-3xl" />
-            <div className="relative mx-auto grid max-w-lg grid-cols-3 items-end gap-3">
+            <div className="relative mx-auto grid max-w-[42rem] grid-cols-3 items-end gap-4">
               {screenshotStory.map((shot, index) => (
                 <div
                   key={shot.src}

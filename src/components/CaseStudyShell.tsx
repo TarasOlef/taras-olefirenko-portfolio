@@ -30,7 +30,7 @@ export function CaseStudyShell({ project }: CaseStudyShellProps) {
         </Link>
         <section className="py-20">
           <p className="mb-5 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-200/80">
-            Case study
+            Caso de estudio
           </p>
           <h1 className="text-balance text-5xl font-semibold tracking-[-0.03em] text-white sm:text-7xl">
             {project.name}

@@ -67,18 +67,37 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: "fabrica-muebles",
+    name: "Fábrica de Muebles / Sistema operativo interno",
+    category: "Operaciones internas / software de gestión",
+    description:
+      "Sistema operativo interno para ordenar procesos, información y seguimiento en un entorno de fabricación, con foco en claridad operativa y mantenimiento.",
+    stack: ["Next.js", "TypeScript", "Gestión interna", "Dashboards", "Procesos"],
+    highlights: [
+      "Operativa centralizada",
+      "Seguimiento interno",
+      "Pensado para equipos",
+    ],
+    status: "Caso de estudio en preparación",
+    accent: "blue",
+    links: {
+      caseStudy: "/projects/fabrica-muebles",
+      repo: "#",
+    },
+  },
+  {
     slug: "internal-ticketing",
     name: "Sistema interno de ticketing",
     category: "Software empresarial / gestión de incidencias",
     description:
       "Aplicación interna con C#, ASP.NET Core, EF Core y SQL Server para centralizar incidencias, roles, métricas y auditoría dentro de una organización grande.",
-    stack: ["C#", "ASP.NET Core", "EF Core", "SQL Server", "Razor Pages"],
+    stack: ["C#", "ASP.NET Core Razor Pages", "Entity Framework Core", "SQL Server", "Roles"],
     highlights: [
       "Roles y permisos",
       "Métricas automáticas",
       "Auditoría y trazabilidad",
     ],
-    status: "Case study completo",
+    status: "Caso de estudio completo",
     accent: "blue",
     links: {
       caseStudy: "/projects/internal-ticketing",

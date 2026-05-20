@@ -7,10 +7,10 @@ export function FeaturedProjects() {
     <section id="proyectos" data-section="projects" className="px-5 py-24 sm:px-8 lg:px-10">
       <span id="projects" className="sr-only" aria-hidden="true" />
       <div className="mx-auto max-w-7xl">
-        <SectionHeader eyebrow="Proyectos" title="Tres problemas reales convertidos en producto.">
-          PEAKR, AIDA y el sistema interno de ticketing muestran producto, automatización y software empresarial real.
+        <SectionHeader eyebrow="Proyectos" title="Problemas reales convertidos en producto.">
+          PEAKR, AIDA, ticketing y operaciones internas muestran producto, automatización y software empresarial real.
         </SectionHeader>
-        <div className="grid gap-6 lg:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {projects.map((project, index) => (
             <ProjectCard key={project.slug} project={project} index={index} />
           ))}

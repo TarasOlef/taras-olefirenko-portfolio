@@ -11,7 +11,6 @@ import {
   Database,
   GitBranch,
   ListChecks,
-  MessageSquare,
   Server,
   ShieldCheck,
   Timer,
@@ -24,8 +23,8 @@ const repoUrl = "https://github.com/TarasOlef/picdaTicketing.git";
 
 const stack = [
   "C#",
-  "ASP.NET Core",
-  "EF Core",
+  "ASP.NET Core Razor Pages",
+  "Entity Framework Core",
   "SQL Server",
   "Roles",
   "Auditoría",

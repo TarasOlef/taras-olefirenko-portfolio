@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { AnimatedBackground } from "@/components/AnimatedBackground";
 import { CaseStudyShell } from "@/components/CaseStudyShell";
 import { PeakrCaseStudy } from "@/components/PeakrCaseStudy";
+import { TicketingCaseStudy } from "@/components/TicketingCaseStudy";
 import { getProjectBySlug, projects } from "@/data/projects";
 
 type PageProps = {
@@ -46,6 +47,8 @@ export default async function ProjectPage({ params }: PageProps) {
       <AnimatedBackground />
       {project.slug === "peakr" ? (
         <PeakrCaseStudy />
+      ) : project.slug === "internal-ticketing" ? (
+        <TicketingCaseStudy />
       ) : (
         <CaseStudyShell project={project} />
       )}
