@@ -6,7 +6,7 @@ export const profile = {
   photo: "/images/taras-profile.png",
   cv: "/TarasOlefirenkoCV.pdf",
   github: "https://github.com/TarasOlef",
-  linkedin: "https://www.linkedin.com/in/tu-linkedin",
+  linkedin: "https://www.linkedin.com/in/taras-olefirenko-9a4533321/",
   headline: "Desarrollador Full-Stack con IA y automatización",
   subheadline:
     "Apps, web apps y herramientas internas desde la idea hasta producción, enfocadas en resolver problemas reales.",
