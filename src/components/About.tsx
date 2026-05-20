@@ -4,7 +4,7 @@ import { SectionHeader } from "./SectionHeader";
 
 const points = [
   "PEAKR nace de una necesidad concreta, no de una idea genérica.",
-  "AIDA busca automatizar procesos que consumen tiempo.",
+  "EstilIA aplica IA a una decisión cotidiana de estilo.",
   "El sistema interno de incidencias ordena problemas reales de equipos.",
 ];
 

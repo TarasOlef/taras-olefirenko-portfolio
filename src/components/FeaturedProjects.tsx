@@ -8,7 +8,7 @@ export function FeaturedProjects() {
       <span id="projects" className="sr-only" aria-hidden="true" />
       <div className="mx-auto max-w-7xl">
         <SectionHeader eyebrow="Proyectos" title="Problemas reales convertidos en producto.">
-          PEAKR, AIDA, ticketing y operaciones internas muestran producto, automatización y software empresarial real.
+          PEAKR, EstilIA, ticketing y operaciones internas muestran producto, IA aplicada y software empresarial real.
         </SectionHeader>
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {projects.map((project, index) => (

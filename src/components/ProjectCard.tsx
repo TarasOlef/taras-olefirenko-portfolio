@@ -22,14 +22,9 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
   const reducedMotion = useReducedMotion();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const isInPreparation = project.status.toLowerCase().includes("preparación");
-  const modalTitle =
-    project.slug === "aida"
-      ? "AIDA se publicará cuando esté documentado al nivel que merece."
-      : "Este proyecto se publicará cuando el caso esté completo.";
+  const modalTitle = "Este proyecto se publicará cuando el caso esté completo.";
   const modalText =
-    project.slug === "aida"
-      ? "El proyecto está en proceso de documentación. Estoy preparando arquitectura, decisiones de producto y resultados para mostrarlo de forma clara, profesional y sin relleno."
-      : "El caso de estudio está en preparación. La tarjeta queda visible para recruiters, pero la página se publicará solo cuando tenga contexto, decisiones y resultados suficientes.";
+    "El caso de estudio está en preparación. La tarjeta queda visible para recruiters, pero la página se publicará solo cuando tenga contexto, decisiones y resultados suficientes.";
 
   useEffect(() => {
     if (!isModalOpen) {
@@ -96,24 +91,37 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         </div>
 
         <div className="mt-auto pt-6">
-          {isInPreparation ? (
-            <button
-              type="button"
-              onClick={() => setIsModalOpen(true)}
-              className="inline-flex items-center gap-2 text-sm font-semibold text-white transition hover:text-cyan-100 focus:outline-none focus:ring-2 focus:ring-cyan-200"
-            >
-              Ver caso de estudio
-              <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-            </button>
-          ) : (
-            <Link
-              href={project.links.caseStudy}
-              className="inline-flex items-center gap-2 text-sm font-semibold text-white transition hover:text-cyan-100 focus:outline-none focus:ring-2 focus:ring-cyan-200"
-            >
-              Ver caso de estudio
-              <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
-          )}
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-3">
+            {isInPreparation ? (
+              <button
+                type="button"
+                onClick={() => setIsModalOpen(true)}
+                className="inline-flex items-center gap-2 text-sm font-semibold text-white transition hover:text-cyan-100 focus:outline-none focus:ring-2 focus:ring-cyan-200"
+              >
+                Ver caso de estudio
+                <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+              </button>
+            ) : (
+              <Link
+                href={project.links.caseStudy}
+                className="inline-flex items-center gap-2 text-sm font-semibold text-white transition hover:text-cyan-100 focus:outline-none focus:ring-2 focus:ring-cyan-200"
+              >
+                Ver caso de estudio
+                <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            )}
+            {project.links.live && project.links.live !== "#" ? (
+              <a
+                href={project.links.live}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-100 transition hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-200"
+              >
+                Web en producción
+                <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+              </a>
+            ) : null}
+          </div>
         </div>
       </motion.article>
 
@@ -134,7 +142,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
             <motion.div
               role="dialog"
               aria-modal="true"
-              aria-labelledby="aida-modal-title"
+              aria-labelledby="project-modal-title"
               initial={reducedMotion ? false : { opacity: 0, y: 18, scale: 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={reducedMotion ? { opacity: 0 } : { opacity: 0, y: 12, scale: 0.98 }}
@@ -160,7 +168,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
                   Caso de estudio en preparación
                 </p>
                 <h2
-                  id="aida-modal-title"
+                  id="project-modal-title"
                   className="text-balance text-3xl font-semibold tracking-[-0.035em] text-white sm:text-4xl"
                 >
                   {modalTitle}

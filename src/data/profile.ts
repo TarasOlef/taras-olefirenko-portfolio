@@ -11,7 +11,7 @@ export const profile = {
   subheadline:
     "Apps, web apps y herramientas internas desde la idea hasta producción, enfocadas en resolver problemas reales.",
   positioning:
-    "Busco problemas reales de personas y equipos, los entiendo y construyo soluciones usables. De ahí nacen PEAKR, AIDA, el sistema interno de ticketing y herramientas operativas: proyectos creados para resolver necesidades concretas, no para decorar un portfolio.",
+    "Busco problemas reales de personas y equipos, los entiendo y construyo soluciones usables. De ahí nacen PEAKR, EstilIA, el sistema interno de ticketing y herramientas operativas: proyectos creados para resolver necesidades concretas, no para decorar un portfolio.",
   availability:
     "Disponible para desarrollo full-stack, producto e IA aplicada a procesos reales.",
 } as const;
