@@ -23,7 +23,7 @@ const serverNow = () => "--:--:--";
 export function ValenciaClock({ className }: { className?: string }) {
   const time = useSyncExternalStore(subscribe, now, serverNow);
   return (
-    <time className={className} suppressHydrationWarning>
+    <time className={className}>
       {time}
     </time>
   );

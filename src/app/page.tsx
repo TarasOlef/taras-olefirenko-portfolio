@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <SiteHeader />
-      <main>
+      <main id="contenido">
         <Hero />
         <Projects index={1} total={2} />
         <Contact index={2} total={2} />

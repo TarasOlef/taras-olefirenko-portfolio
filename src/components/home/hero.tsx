@@ -22,7 +22,7 @@ export function Hero() {
         <span>IA que hace el trabajo</span>
       </p>
 
-      <h1 className="display-condensed mt-7 self-end text-[clamp(56px,15.6vw,236px)] leading-[0.82] tracking-[-0.01em] md:mt-[clamp(20px,3vw,40px)]">
+      <h1 translate="no" className="display-condensed mt-7 self-end text-[clamp(56px,15.6vw,236px)] leading-[0.82] tracking-[-0.01em] md:mt-[clamp(20px,3vw,40px)]">
         <span className="block">{firstName}</span>
         <span className="block text-transparent [-webkit-text-stroke:1.5px_var(--faint)]">{lastName}</span>
       </h1>

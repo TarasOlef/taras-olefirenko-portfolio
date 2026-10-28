@@ -32,7 +32,7 @@ export function Projects({ index, total }: { index: number; total: number }) {
                     <Image src={cover.src} alt={cover.alt} fill sizes="(min-width: 1024px) 33vw, 100vw" className="object-cover object-top" />
                   </div>
                 )}
-                <h3 className="display-condensed text-[clamp(32px,3vw,44px)] leading-[0.92] text-balance">{project.name}</h3>
+                <h3 translate="no" className="display-condensed text-[clamp(32px,3vw,44px)] leading-[0.92] text-balance wrap-anywhere">{project.name}</h3>
                 <p className="text-sm text-muted-foreground">{project.category}</p>
                 <p className="text-[15px] text-foreground/90">{project.description}</p>
                 <ul className="mt-auto flex flex-wrap gap-1.5 pt-2 font-mono text-[11px] text-muted-foreground">
@@ -44,11 +44,11 @@ export function Projects({ index, total }: { index: number; total: number }) {
                 </ul>
               </div>
               <div className="flex h-11 items-center justify-between gap-3 border-t border-line bg-[#0b0b0b] px-3 font-mono text-[11px] tracking-[0.05em] uppercase">
-                <span className={live ? "flex items-center gap-2 text-foreground" : "flex items-center gap-2 text-muted-foreground"}>
-                  <span aria-hidden className={live ? "size-[7px] rounded-full bg-tally" : "size-[7px] rounded-full bg-line-2"} />
-                  {project.status}
+                <span className={live ? "flex min-w-0 items-center gap-2 text-foreground" : "flex min-w-0 items-center gap-2 text-muted-foreground"}>
+                  <span aria-hidden className={live ? "size-[7px] shrink-0 rounded-full bg-tally" : "size-[7px] shrink-0 rounded-full bg-line-2"} />
+                  <span className="truncate">{project.status}</span>
                 </span>
-                <span className="flex gap-4">
+                <span className="flex shrink-0 gap-4">
                   <Link href={project.links.caseStudy} className="transition-colors duration-150 hover:text-tally">
                     Caso
                   </Link>
