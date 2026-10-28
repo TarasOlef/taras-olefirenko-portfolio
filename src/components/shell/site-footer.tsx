@@ -11,7 +11,7 @@ export function SiteFooter() {
       <span className="flex items-center gap-2">
         Ahora en Valencia <ValenciaClock className="tabular text-foreground" />
       </span>
-      <a href="#inicio" className="inline-flex items-center gap-1.5 transition-colors duration-150 hover:text-foreground">
+      <a href="#inicio" className="inline-flex items-center gap-1.5 hover:text-foreground">
         Volver arriba <ArrowUp aria-hidden className="size-3.5" strokeWidth={1.75} />
       </a>
     </footer>

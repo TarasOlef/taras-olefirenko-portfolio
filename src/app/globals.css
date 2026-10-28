@@ -151,10 +151,11 @@
   text-transform: uppercase;
 }
 
-/* Rótulo inferior: avanza sin parar; se detiene al pasar el ratón y con movimiento reducido */
-@keyframes chyron-roll {
-  to {
-    transform: translateX(-50%);
+/* Rótulo inferior: cada elemento entra desde abajo */
+@keyframes caption-in {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
   }
 }
 

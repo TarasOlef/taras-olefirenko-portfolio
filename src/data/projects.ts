@@ -4,106 +4,77 @@ export type Project = {
   category: string;
   description: string;
   stack: string[];
-  highlights: string[];
+  /** Estado real, tal cual (docs/BRIEF.md §11.1) */
   status: string;
-  accent: "cyan" | "violet" | "blue";
+  live: boolean;
+  /** Capturas reales; la primera es la principal */
+  media: { src: string; alt: string; label: string }[];
   links: {
-    caseStudy: string;
-    live?: string;
-    repo?: string;
+    caseStudy?: string;
+    site?: { href: string; label: string };
   };
 };
 
 export const projects: Project[] = [
+  {
+    slug: "encia",
+    name: "Encía",
+    category: "Plataforma para clínicas dentales con asistente de IA",
+    description:
+      "Agenda, fichas, presupuestos, visor 3D y WhatsApp con asistente para una clínica dental. Enseña los euros que se escapan cada día y los recupera con un clic. Cada clínica recibe su demo personalizada en encia.app.",
+    stack: ["Next.js", "React", "TypeScript", "AI SDK", "Supabase", "Tailwind"],
+    status: "En desarrollo",
+    live: true,
+    media: [
+      {
+        src: "/projects/encia/encia-hoy.webp",
+        alt: "Pantalla Hoy de Encía: euros en juego por presupuestos, cobros, huecos y revisiones, con acciones por WhatsApp",
+        label: "Hoy · € en juego",
+      },
+      {
+        src: "/projects/encia/encia-visor-3d.webp",
+        alt: "Visor 3D de Encía con la arcada dental y la lista de piezas",
+        label: "Visor 3D",
+      },
+      {
+        src: "/projects/encia/encia-whatsapp.webp",
+        alt: "Mensajes de WhatsApp de Encía con recordatorios y respuestas del asistente",
+        label: "WhatsApp con asistente",
+      },
+    ],
+    links: {
+      site: { href: "https://encia.app", label: "encia.app" },
+    },
+  },
   {
     slug: "peakr",
     name: "PEAKR",
     category: "App móvil con IA publicada en Google Play",
     description:
       "Aplicación móvil para controlar calorías, hábitos y progreso personal con una experiencia clara, IA aplicada y arquitectura full-stack.",
-    stack: [
-      "Flutter",
-      "Dart",
-      "Supabase",
-      "PostgreSQL",
-      "Edge Functions",
-      "APIs",
-      "IA",
-      "PostHog",
-      "RevenueCat",
-      "Google Play",
-      "Testing / QA",
-      "Release",
-    ],
-    highlights: [
-      "App publicada en Google Play",
-      "Arquitectura full-stack",
-      "IA integrada en flujos reales",
-    ],
-    status: "Producto publicado",
-    accent: "cyan",
+    stack: ["Flutter", "Dart", "Supabase", "PostgreSQL", "Edge Functions", "IA"],
+    status: "Publicada en Google Play",
+    live: true,
+    media: [{ src: "/projects/peakr/peakr-home.png", alt: "Pantalla de inicio de PEAKR", label: "Inicio" }],
     links: {
       caseStudy: "/projects/peakr",
-      live: "https://play.google.com/store/apps/details?id=com.taras.peakr",
+      site: { href: "https://play.google.com/store/apps/details?id=com.taras.peakr", label: "Google Play" },
     },
   },
   {
-    slug: "estilia",
-    name: "EstilIA",
-    category: "Web app con IA / Fashion tech",
+    slug: "prerox",
+    name: "PreRox",
+    category: "App móvil para preparar HYROX",
     description:
-      "Web app que analiza outfits a partir de una foto y ofrece recomendaciones prácticas para mejorar estilo, coherencia visual y decisión de compra.",
-    stack: ["Next.js", "TypeScript", "React", "IA", "APIs", "UX", "Producto digital"],
-    highlights: [
-      "Análisis visual con IA",
-      "Recomendaciones accionables",
-      "Web app en producción",
-      "Flujo simple desde foto a resultado",
+      "Plan de preparación para HYROX con un motor de entrenamiento determinista, las ocho estaciones y un reproductor de sesiones que funciona sin conexión. En español e inglés.",
+    stack: ["Expo", "React Native", "TypeScript", "Supabase", "Edge Functions"],
+    status: "En desarrollo",
+    live: false,
+    media: [
+      { src: "/projects/prerox/prerox-bienvenida.webp", alt: "Bienvenida de PreRox", label: "Bienvenida" },
+      { src: "/projects/prerox/prerox-objetivo.webp", alt: "PreRox pregunta el objetivo de la carrera", label: "Tu carrera" },
     ],
-    status: "Web app en producción",
-    accent: "violet",
-    links: {
-      caseStudy: "/projects/estilia",
-      live: "https://estilia.es",
-    },
-  },
-  {
-    slug: "fabrica-muebles",
-    name: "Fábrica de Muebles / Sistema operativo interno",
-    category: "Operaciones internas / software de gestión",
-    description:
-      "Sistema operativo interno para ordenar procesos, información y seguimiento en un entorno de fabricación, con foco en claridad operativa y mantenimiento.",
-    stack: ["Next.js", "TypeScript", "Gestión interna", "Dashboards", "Procesos"],
-    highlights: [
-      "Operativa centralizada",
-      "Seguimiento interno",
-      "Pensado para equipos",
-    ],
-    status: "Caso de estudio en preparación",
-    accent: "blue",
-    links: {
-      caseStudy: "/projects/fabrica-muebles",
-      repo: "#",
-    },
-  },
-  {
-    slug: "internal-ticketing",
-    name: "Sistema interno de ticketing",
-    category: "Software empresarial / gestión de incidencias",
-    description:
-      "Aplicación interna con C#, ASP.NET Core, EF Core y SQL Server para centralizar incidencias, roles, métricas y auditoría dentro de una organización grande.",
-    stack: ["C#", "ASP.NET Core Razor Pages", "Entity Framework Core", "SQL Server", "Roles"],
-    highlights: [
-      "Roles y permisos",
-      "Métricas automáticas",
-      "Auditoría y trazabilidad",
-    ],
-    status: "Caso de estudio completo",
-    accent: "blue",
-    links: {
-      caseStudy: "/projects/internal-ticketing",
-      repo: "https://github.com/TarasOlef/picdaTicketing.git",
-    },
+    links: {},
   },
 ];
 

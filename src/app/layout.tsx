@@ -20,9 +20,9 @@ const code = JetBrains_Mono({
   subsets: ["latin"],
 });
 
-const title = "Taras Olefirenko · IA que hace el trabajo";
+const title = "Taras Olefirenko · Software con IA, de la idea a producción";
 const description =
-  "Construyo IA que atiende, reserva, vende e informa, y te enseño cómo lo hace: herramienta, latencia y coste de cada paso. Desarrollador en Xàtiva, Valencia.";
+  "Desarrollador en Xàtiva (Valencia). Apps, webs y herramientas con IA, de la idea a producción: Encía, PEAKR y PreRox.";
 
 export const metadata: Metadata = {
   title,

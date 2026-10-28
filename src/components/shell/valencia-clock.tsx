@@ -22,9 +22,11 @@ const serverNow = () => "--:--:--";
 
 export function ValenciaClock({ className }: { className?: string }) {
   const time = useSyncExternalStore(subscribe, now, serverNow);
+  // En pantallas estrechas basta con horas y minutos
   return (
     <time className={className}>
-      {time}
+      {time.slice(0, 5)}
+      <span className="max-sm:hidden">{time.slice(5)}</span>
     </time>
   );
 }
