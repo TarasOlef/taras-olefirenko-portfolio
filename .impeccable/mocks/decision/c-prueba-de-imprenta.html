@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0A0A0A">
+<title>C · Prueba de imprenta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=Hanken+Grotesk:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Gloock&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ground:#0A0A0A; --sheet:#0F0F0F; --line:#232323; --line-2:#333; --mark:#5A5A5A;
+  --ink:#F0EDE7; --ink-2:#A29E97; --ink-3:#6A6762;
+  --spot:#36B7EA; --spot-ink:#03141C;
+  --display:"Bricolage Grotesque",sans-serif; --text:"Hanken Grotesk",sans-serif; --mono:"Geist Mono",monospace;
+  --n-ground:#F6F3EE; --n-ink:#14211F; --n-ink-2:#5A6563; --n-brand:#0F5C58; --n-line:#E3DED6;
+  --gutter:clamp(16px,3.2vw,48px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ground);color:var(--ink);-webkit-text-size-adjust:100%}
+body{font-family:var(--text);font-size:16px;line-height:1.5;background:var(--ground);overflow-x:hidden;transition:none}
+::selection{background:var(--spot);color:var(--spot-ink)}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--spot);outline-offset:3px;border-radius:2px}
+.num{font-variant-numeric:tabular-nums}
+.slug{font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:.01em}
+
+/* marcas de corte */
+.crop{position:relative}
+.crop>i{position:absolute;width:22px;height:22px;pointer-events:none}
+.crop>i::before,.crop>i::after{content:"";position:absolute;background:var(--mark)}
+.crop>i::before{width:22px;height:1px}
+.crop>i::after{width:1px;height:22px}
+.crop>.tl{top:-30px;left:-30px}.crop>.tl::before{top:29px;left:0}.crop>.tl::after{left:29px;top:0}
+.crop>.tr{top:-30px;right:-30px}.crop>.tr::before{top:29px;right:0}.crop>.tr::after{right:29px;top:0}
+.crop>.bl{bottom:-30px;left:-30px}.crop>.bl::before{bottom:29px;left:0}.crop>.bl::after{left:29px;bottom:0}
+.crop>.br{bottom:-30px;right:-30px}.crop>.br::before{bottom:29px;right:0}.crop>.br::after{right:29px;bottom:0}
+
+/* barra */
+.bar{position:sticky;top:0;z-index:10;display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;gap:28px;padding:14px var(--gutter);background:rgba(10,10,10,.94);border-bottom:1px solid var(--line)}
+.mark{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:-.01em}
+.mark svg{width:20px;height:20px;color:var(--ink-2)}
+.nav{display:flex;gap:26px;justify-content:center;font-size:14px;color:var(--ink-2)}
+.nav a:hover{color:var(--ink)}
+.clock{font-family:var(--mono);font-size:12.5px;color:var(--ink-2)}
+.clock b{color:var(--ink);font-weight:500}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:44px;padding:0 18px;border-radius:10px;font-weight:600;font-size:15px;white-space:nowrap;transition:transform .16s cubic-bezier(.2,.8,.2,1),background .16s}
+.btn:active{transform:scale(.97)}
+.btn-spot{background:var(--spot);color:var(--spot-ink)}
+.btn-ghost{border:1px solid var(--line-2)}
+.btn-ghost:hover{background:#171717}
+.btn svg{width:16px;height:16px}
+
+/* hero */
+.hero{padding:clamp(56px,6vw,88px) calc(var(--gutter) + 30px) clamp(56px,6vw,88px)}
+.hero-sheet{display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:clamp(28px,4vw,64px)}
+.hero-top{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.name{font-family:var(--display);font-weight:700;font-variation-settings:"opsz" 96,"wdth" 75;font-size:clamp(64px,10.4vw,168px);line-height:.86;letter-spacing:-.018em;font-feature-settings:"liga" 0;margin:clamp(28px,4vw,56px) 0 clamp(28px,3vw,44px)}
+.name span{display:block}
+.name span+span{padding-left:.9em}
+.lede{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.95fr);gap:clamp(24px,3vw,56px);align-items:end}
+.lede h1{font-family:var(--display);font-weight:600;font-variation-settings:"opsz" 48,"wdth" 90;font-size:clamp(28px,2.7vw,42px);line-height:1.08;letter-spacing:-.02em;max-width:19ch;text-wrap:balance}
+.lede h1 span{color:var(--spot)}
+.lede p{color:var(--ink-2);max-width:44ch;margin-bottom:20px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+
+/* tira de control */
+.strip{display:flex;flex-direction:column;gap:14px;border-left:1px solid var(--line);padding-left:clamp(20px,2vw,32px)}
+.strip h2{font-family:var(--display);font-weight:600;font-size:17px;line-height:1.2;letter-spacing:-.01em}
+.strip p{font-size:13.5px;color:var(--ink-2)}
+.dens{display:grid;grid-template-columns:repeat(5,1fr);height:16px;border:1px solid var(--line)}
+.dens span:nth-child(1){background:#F0EDE7}.dens span:nth-child(2){background:#B8B5AF}.dens span:nth-child(3){background:#7C7974}.dens span:nth-child(4){background:#3F3D3A}.dens span:nth-child(5){background:#141414}
+.inks{display:grid;gap:6px}
+.ink{display:grid;grid-template-columns:34px 1fr auto;align-items:center;gap:10px;padding:5px;border:1px solid var(--line);border-radius:10px;background:none;color:var(--ink);font:inherit;font-size:13.5px;text-align:left;cursor:pointer;transition:border-color .16s,background .16s}
+.ink:hover{background:#151515}
+.ink[aria-pressed="true"]{border-color:var(--ink-2)}
+.ink i{width:34px;height:34px;border-radius:6px;display:block}
+.ink small{font-family:var(--mono);font-size:10.5px;color:var(--ink-3)}
+.ink.custom i{background:conic-gradient(#36B7EA,#2FBF71,#F5B54A,#FF6B4A,#36B7EA)}
+.reg{width:26px;height:26px;color:var(--mark)}
+
+/* cifras */
+.figures{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:0 var(--gutter)}
+.fig{padding:26px 0 24px;border-right:1px solid var(--line);padding-right:24px}
+.fig+.fig{padding-left:24px}
+.fig:last-child{border-right:0}
+.fig b{display:block;font-family:var(--display);font-weight:700;font-variation-settings:"opsz" 96,"wdth" 75;font-size:clamp(52px,5.4vw,84px);line-height:.9;letter-spacing:-.01em}
+.fig span{display:block;margin-top:10px;color:var(--ink-2);font-size:14px;max-width:22ch}
+.footnote{margin:10px var(--gutter) 0}
+
+/* sección */
+.sec{padding:clamp(72px,9vw,128px) calc(var(--gutter) + 30px) clamp(64px,7vw,104px)}
+.sec-grid{display:grid;grid-template-columns:minmax(0,32fr) minmax(0,68fr);gap:clamp(28px,3.4vw,56px);align-items:start}
+.aside{position:sticky;top:96px;display:flex;flex-direction:column;gap:26px}
+.sec-n{display:flex;gap:12px;align-items:baseline}
+.sec-n b{font-family:var(--display);font-weight:700;font-size:15px;color:var(--spot)}
+.aside h2{font-family:var(--display);font-weight:700;font-variation-settings:"opsz" 96,"wdth" 78;font-size:clamp(44px,4.6vw,72px);line-height:.94;letter-spacing:-.015em}
+.aside>p{color:var(--ink-2);font-size:16.5px}
+.aside>p strong{color:var(--ink);font-weight:600}
+.aside h4{font-family:var(--mono);font-weight:400;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-3);margin-bottom:10px}
+.aside ul{list-style:none;display:grid;gap:7px;font-size:14.5px}
+.aside li{display:flex;gap:10px}
+.aside li svg{flex:none;width:16px;height:16px;margin-top:3px;color:var(--spot)}
+.aside li.sim{color:var(--ink-2)}
+.aside li.sim svg{color:var(--ink-3)}
+.price b{display:block;font-family:var(--display);font-weight:700;font-variation-settings:"wdth" 80;font-size:38px;line-height:1;letter-spacing:-.02em}
+.price span{color:var(--ink-2);font-size:14px}
+.aside-cta{display:grid;gap:28px}
+.aside .ctas{flex-direction:column}
+.aside .ctas .btn{width:100%}
+
+/* prueba */
+.proof{display:flex;flex-direction:column;gap:12px}
+.proof-top{display:flex;justify-content:space-between;gap:14px;align-items:center}
+.biz{position:relative;background:var(--n-ground);color:var(--n-ink);display:grid;grid-template-columns:minmax(0,1fr) 320px;min-height:470px;border-radius:4px;overflow:hidden}
+.biz-site{padding:22px 24px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.biz-nav{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--n-ink-2);gap:10px}
+.biz-logo{display:flex;align-items:center;gap:8px;font-family:"Gloock",serif;font-size:19px;color:var(--n-ink);white-space:nowrap}
+.biz-logo svg{width:22px;height:22px;color:var(--n-brand)}
+.biz h3{font-family:"Gloock",serif;font-weight:400;font-size:clamp(26px,2.3vw,36px);line-height:1.05;max-width:12ch}
+.biz-sub{color:var(--n-ink-2);font-size:14px;max-width:34ch}
+.biz-list{border-top:1px solid var(--n-line);font-size:13px}
+.biz-list div{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--n-line)}
+.biz-list span:last-child{color:var(--n-ink-2)}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;background:var(--n-ink);color:#fff;font-size:11px;font-weight:600;align-self:flex-start;margin-top:auto}
+.badge i{width:6px;height:6px;border-radius:50%;background:#F5B54A}
+.chat{background:#fff;border-left:1px solid var(--n-line);display:flex;flex-direction:column;min-width:0}
+.chat-h{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--n-line)}
+.chat-h .av{width:30px;height:30px;border-radius:50%;background:var(--n-brand);display:grid;place-items:center;color:#fff}
+.chat-h .av svg{width:16px;height:16px}
+.chat-h b{display:block;font-size:13px}
+.chat-h small{font-size:11px;color:var(--n-ink-2)}
+.msgs{flex:1;padding:14px;display:flex;flex-direction:column;gap:10px;font-size:13px;line-height:1.4}
+.m{max-width:86%;padding:9px 12px;border-radius:14px}
+.m.bot{background:#EEF3F1;border-bottom-left-radius:4px}
+.m.me{background:var(--n-brand);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.guts{font-family:var(--mono);font-size:10px;color:#7B8583;margin-top:-4px}
+.slots{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.slot{display:flex;justify-content:space-between;padding:8px 10px;border:1px solid #CFDAD6;border-radius:10px;background:#fff;font-size:12.5px;font-weight:600}
+.slot small{font-weight:400;color:var(--n-ink-2)}
+.slot.pick{border-color:var(--n-brand);background:#E4EFEC}
+.card{border:1px solid #CFDAD6;border-radius:12px;padding:10px 12px;background:#fff;max-width:94%}
+.card .ok{font-size:11px;font-weight:700;color:var(--n-brand);text-transform:uppercase;letter-spacing:.04em}
+.card b{display:block;font-size:14px;margin-top:3px}
+.card p{font-size:12px;color:var(--n-ink-2)}
+.chat-in{display:flex;gap:8px;padding:10px;border-top:1px solid var(--n-line)}
+.chat-in div{flex:1;height:36px;border:1px solid var(--n-line);border-radius:18px;padding:0 12px;display:flex;align-items:center;font-size:12.5px;color:#9AA3A1}
+.chat-in span{width:36px;height:36px;border-radius:50%;background:var(--n-brand);display:grid;place-items:center;color:#fff}
+.chat-in svg{width:16px;height:16px}
+
+.inside{display:grid;grid-template-columns:minmax(0,1.25fr) 170px minmax(0,1fr);gap:12px}
+.pane{border:1px solid var(--line);border-radius:4px;background:var(--sheet);padding:12px;min-width:0}
+.pane h5{display:flex;justify-content:space-between;font-size:12.5px;font-weight:600;margin-bottom:10px}
+.pane h5 span{font-family:var(--mono);font-weight:400;font-size:10.5px;color:var(--ink-3)}
+.week{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px}
+.day{display:flex;flex-direction:column;gap:3px}
+.day>span{font-family:var(--mono);font-size:10px;color:var(--ink-3);padding-bottom:2px}
+.day.today>span{color:var(--spot)}
+.day i{display:block;height:12px;border-radius:2px;background:#232323}
+.day i.l{height:22px}
+.day i.new{background:var(--spot)}
+.day i.held{background:transparent;border:1px dashed var(--line-2)}
+.wk-legend{display:flex;gap:12px;margin-top:10px;font-size:11px;color:var(--ink-2)}
+.wk-legend em{font-style:normal;display:inline-flex;align-items:center;gap:5px}
+.wk-legend em::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--spot)}
+.wk-legend em.h::before{background:transparent;border:1px dashed var(--ink-3)}
+.phonepane{display:grid;place-items:center;padding:8px 0}
+.ph{width:140px;height:250px;border-radius:24px;background:#000;border:1px solid #2a2a2a;padding:5px;box-shadow:0 12px 28px rgba(0,0,0,.5)}
+.ph-s{width:100%;height:100%;border-radius:19px;background:#F2F2F4;color:#111;overflow:hidden;display:flex;flex-direction:column}
+.ph-isl{width:44px;height:12px;border-radius:10px;background:#000;margin:6px auto 0}
+.ph-top{display:flex;align-items:center;gap:5px;padding:7px 8px;border-bottom:1px solid #E2E2E6;font-size:9px;font-weight:700}
+.ph-top i{width:15px;height:15px;border-radius:50%;background:var(--n-brand)}
+.ph-msg{margin:7px;background:#fff;border-radius:9px;border-top-left-radius:3px;padding:6px 7px;font-size:8.5px;line-height:1.35}
+.log{font-family:var(--mono);font-size:10.5px;line-height:1.85;color:var(--ink-2)}
+.log div{display:flex;justify-content:space-between;gap:8px;white-space:nowrap}
+.log div span:first-child{overflow:hidden;text-overflow:ellipsis;color:var(--ink)}
+.log .hl span:first-child{color:var(--spot)}
+.log .sum{margin-top:8px;padding-top:8px;border-top:1px solid var(--line)}
+.log .sum b{color:var(--ink);font-weight:500}
+.tabs{display:none}
+
+@media (max-width:1180px){
+  .nav{display:none}
+  .bar{grid-template-columns:auto 1fr auto}
+  .clock{justify-self:end}
+  .hero-sheet{grid-template-columns:1fr}
+  .strip{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:24px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:14px 28px}
+  .strip .inks{grid-row:span 3;grid-template-columns:1fr 1fr;align-content:start}
+  .strip .reg{display:none}
+  .sec-grid{grid-template-columns:1fr}
+  .aside{position:static}
+  .aside-cta{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+}
+@media (max-width:760px){
+  .bar{grid-template-columns:auto 1fr;gap:12px}
+  .clock{display:none}
+  .bar .btn{justify-self:end;height:40px;padding:0 14px;font-size:14px}
+  .hero,.sec{padding-left:calc(var(--gutter) + 14px);padding-right:calc(var(--gutter) + 14px)}
+  .crop>i{transform:scale(.6)}
+  .crop>.tl{top:-24px;left:-24px}.crop>.tr{top:-24px;right:-24px}.crop>.bl{bottom:-24px;left:-24px}.crop>.br{bottom:-24px;right:-24px}
+  .name{font-size:clamp(52px,17vw,100px)}
+  .name span+span{padding-left:0}
+  .lede{grid-template-columns:1fr;gap:16px}
+  .strip{grid-template-columns:1fr}
+  .strip .inks{grid-row:auto;grid-template-columns:1fr 1fr}
+  .figures{grid-template-columns:1fr 1fr}
+  .fig,.fig+.fig{padding:20px 14px 18px 0;border-bottom:1px solid var(--line)}
+  .fig:nth-child(2n){border-right:0;padding-left:14px}
+  .fig:nth-last-child(-n+2){border-bottom:0}
+  .aside-cta{grid-template-columns:1fr}
+  .tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;padding:4px;border:1px solid var(--line);border-radius:12px}
+  .tabs span{position:relative;text-align:center;padding:9px 0;border-radius:9px;font-size:14px;color:var(--ink-2)}
+  .tabs span.on{background:#1E1E1E;color:var(--ink)}
+  .tabs i{position:absolute;top:8px;margin-left:4px;width:6px;height:6px;border-radius:50%;background:var(--spot)}
+  .biz{grid-template-columns:1fr;min-height:0}
+  .biz-site{display:none}
+  .chat{border-left:0}
+  .inside{display:none}
+  .proof-top .slug{display:none}
+  .badge-m{display:inline-flex!important}
+}
+.badge-m{display:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="bar">
+  <a class="mark" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="6"/><path d="M12 2v20M2 12h20"/></svg>Taras Olefirenko</a>
+  <nav class="nav" aria-label="Principal"><a href="#demo">Proyectos</a><a href="#">Pruébalo</a><a href="#">Para agencias</a><a href="#">Cómo trabajo</a><a href="#">Contacto</a></nav>
+  <div class="clock">Valencia · <b class="num" id="clock">18:05</b></div>
+  <a class="btn btn-spot" href="#">Reservar 20 min</a>
+</header>
+
+<section class="hero">
+  <div class="crop"><i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i>
+  <div class="hero-sheet">
+    <div>
+      <div class="hero-top slug"><span>Portfolio · 2026 · Xàtiva, Valencia</span><span class="num">prueba 03 · 28/10/2026</span></div>
+      <div class="name" aria-label="Taras Olefirenko"><span>Taras</span><span>Olefirenko</span></div>
+      <div class="lede">
+        <h1>Construyo IA que reserva, vende e informa. <span>Con el color de tu agencia.</span></h1>
+        <div>
+          <p>Tres demos que funcionan de verdad. Las ves trabajar en directo, con el coste de cada paso, y se entregan en marca blanca para que las vendas tú.</p>
+          <div class="ctas">
+            <a class="btn btn-spot" href="#demo">Probar el asistente <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
+            <a class="btn btn-ghost" href="#">Reservar 20 min conmigo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <aside class="strip" aria-label="Elige la tinta">
+      <svg class="reg" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1"><circle cx="13" cy="13" r="7"/><circle cx="13" cy="13" r="3"/><path d="M13 0v26M0 13h26"/></svg>
+      <h2>Pruébalo con otra tinta</h2>
+      <p>Toda la página, y cada demo, cambia al color de la agencia.</p>
+      <div class="inks" role="group" aria-label="Tintas de ejemplo">
+        <button class="ink" aria-pressed="true" data-c="#36B7EA" data-k="#03141C"><i style="background:#36B7EA"></i>Taras<small>cian</small></button>
+        <button class="ink" aria-pressed="false" data-c="#FF6B4A" data-k="#1F0700"><i style="background:#FF6B4A"></i>Agencia Brisa<small>ej.</small></button>
+        <button class="ink" aria-pressed="false" data-c="#46C784" data-k="#03190C"><i style="background:#46C784"></i>Agencia Norte<small>ej.</small></button>
+        <button class="ink custom" aria-pressed="false"><i></i>Tu color<small>elige</small></button>
+      </div>
+      <div class="dens" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+    </aside>
+  </div>
+  </div>
+</section>
+
+<section class="figures" aria-label="Cifras">
+  <div class="fig"><b class="num">3</b><span>demos de IA funcionando en el navegador</span></div>
+  <div class="fig"><b class="num">5</b><span>productos publicados, de la idea a producción</span></div>
+  <div class="fig"><b class="num">1</b><span>persona: te respondo yo, sin intermediarios</span></div>
+  <div class="fig"><b class="num">24 h</b><span>y cada demo se borra sola</span></div>
+</section>
+<p class="slug footnote">Cifras de ejemplo para la maqueta: Taras confirma cada número antes de publicar.</p>
+
+<section class="sec" id="demo">
+  <div class="sec-grid">
+    <div class="aside">
+      <div class="sec-n"><b class="num">01 / 07</b><span class="slug">Proyectos · demo 1</span></div>
+      <h2>Tu web contesta y reserva sola</h2>
+      <p>Pide una limpieza para el jueves por la tarde. <strong>La cita cae en la agenda</strong> y la confirmación llega al móvil del cliente. Todo con la marca del negocio, o la de tu agencia.</p>
+      <div class="aside-cta">
+        <div>
+          <h4>Qué es real</h4>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>La cita se guarda de verdad y no puede solaparse.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Huecos según horario, profesional y gabinete.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Coste y latencia de cada respuesta.</li>
+            <li class="sim"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M5 12h14"/></svg>Simulado: el móvil y el WhatsApp.</li>
+          </ul>
+        </div>
+        <div style="display:grid;gap:22px">
+          <div class="price"><h4>Para agencias</h4><b class="num">900–2.000 €</b><span class="num">de puesta en marcha · 90–200 € al mes</span></div>
+          <div class="ctas"><a class="btn btn-spot" href="#">Abrir la demo completa</a><a class="btn btn-ghost" href="#">Ver el vídeo · 45 s</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="crop"><i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i>
+    <div class="proof">
+      <div class="proof-top"><span class="slug">clinica-dental-nacar · web del negocio · tema claro</span><span class="slug num">pliego 1 de 3</span></div>
+      <div class="tabs" aria-hidden="true"><span class="on">Chat</span><span>Agenda<i></i></span><span>Móvil<i></i></span></div>
+      <div class="biz">
+        <div class="biz-site">
+          <div class="biz-nav"><span class="biz-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3c-2.2 0-4 1.8-4 4.2 0 2.4 1 3.6 1.6 6.3C5.3 16.6 5.9 21 7.6 21c1.6 0 1.7-4.6 4.4-4.6s2.8 4.6 4.4 4.6c1.7 0 2.3-4.4 3-7.5C20 10.8 21 9.6 21 7.2 21 4.8 19.2 3 17 3c-2 0-3 1-5 1S9 3 7 3Z"/></svg>Clínica Dental Nácar</span><span>Tratamientos · Contacto</span></div>
+          <h3>Tu revisión, sin llamar ni esperar.</h3>
+          <p class="biz-sub">Odontología general, ortodoncia e implantes en Ruzafa, Valencia.</p>
+          <div class="biz-list num">
+            <div><span>Revisión y limpieza · 30 min</span><span>45 €</span></div>
+            <div><span>Empaste · 45 min</span><span>60–90 €</span></div>
+            <div><span>Blanqueamiento · 60 min</span><span>250 €</span></div>
+          </div>
+          <span class="badge"><i></i>Demo · datos ficticios</span>
+        </div>
+        <div class="chat">
+          <div class="chat-h"><span class="av"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/></svg></span><div><b>Clínica Dental Nácar</b><small>Asistente con IA</small></div></div>
+          <div class="msgs">
+            <div class="m me">¿Tenéis algo el jueves por la tarde para una limpieza?</div>
+            <div class="m bot">Sí: 30 min, 45 €. Te propongo:
+              <div class="slots num"><span class="slot pick">Jue 29 · 17:30<small>Dra. Ferrer</small></span><span class="slot">Jue 29 · 18:15<small>Marta</small></span></div>
+            </div>
+            <div class="guts num">buscar_huecos → 4 huecos · 640 ms · 0,0009 €</div>
+            <div class="card"><span class="ok">Cita confirmada</span><b class="num">Jueves 29 de octubre · 17:30</b><p>Revisión y limpieza · Dra. Ferrer</p></div>
+            <span class="badge badge-m"><i></i>Demo · datos ficticios</span>
+          </div>
+          <div class="chat-in"><div>Escribe tu mensaje…</div><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </div>
+      </div>
+      <div class="inside">
+        <div class="pane">
+          <h5>Agenda · semana 44 <span>4 profesionales</span></h5>
+          <div class="week">
+            <div class="day"><span>L 26</span><i class="l"></i><i></i><i></i><i class="l"></i><i></i><i></i></div>
+            <div class="day"><span>M 27</span><i></i><i class="l"></i><i></i><i></i><i class="l"></i></div>
+            <div class="day"><span>X 28</span><i class="l"></i><i></i><i class="l"></i><i></i><i></i><i></i></div>
+            <div class="day today"><span>J 29</span><i></i><i class="l"></i><i class="new"></i><i class="held"></i><i></i></div>
+            <div class="day"><span>V 30</span><i></i><i></i><i class="l"></i></div>
+          </div>
+          <div class="wk-legend"><em>Nueva · 17:30</em><em class="h">Retenida · 4:12</em></div>
+        </div>
+        <div class="pane phonepane"><div class="ph"><div class="ph-s"><div class="ph-isl"></div><div class="ph-top"><i></i>Clínica Dental Nácar</div><div class="ph-msg num">Hola, Lucía. Tu cita está confirmada: <b>jueves 29 a las 17:30</b>, limpieza con la Dra. Ferrer.</div></div></div></div>
+        <div class="pane">
+          <h5>Tripas <span>gpt-5-mini</span></h5>
+          <div class="log num">
+            <div><span>buscar_huecos(limpieza, jue)</span><span>640 ms</span></div>
+            <div><span>retener_hueco(17:30)</span><span>5 min</span></div>
+            <div class="hl"><span>crear_cita(Lucía M.)</span><span>812 ms</span></div>
+            <div><span>whatsapp → 6•• ••• 478</span><span>ok</span></div>
+            <div class="sum"><span>6 turnos · 41 s</span><span><b>0,0031 €</b></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(()=>{
+  const c=document.getElementById('clock');const f=new Intl.DateTimeFormat('es-ES',{timeZone:'Europe/Madrid',hour:'2-digit',minute:'2-digit',hour12:false});const t=()=>c.textContent=f.format(new Date());t();setInterval(t,10000);
+  document.querySelectorAll('.ink[data-c]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.ink').forEach(x=>x.setAttribute('aria-pressed',x===b));document.documentElement.style.setProperty('--spot',b.dataset.c);document.documentElement.style.setProperty('--spot-ink',b.dataset.k)}));
+})();
+</script>
+</body>
+</html>
