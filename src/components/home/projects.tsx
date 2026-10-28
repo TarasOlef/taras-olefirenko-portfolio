@@ -72,9 +72,12 @@ function ProgrammeMedia({ media }: { media: Project["media"] }) {
   const [main, ...rest] = media;
   return (
     <div className="flex flex-col gap-px border-b border-line bg-line lg:flex-1">
-      <div className="relative aspect-[16/10] overflow-hidden bg-[#050505] lg:aspect-auto lg:min-h-[380px] lg:flex-1">
-        <Image src={main.src} alt={main.alt} fill sizes="(min-width: 1024px) 66vw, 100vw" className="object-cover object-top-left" />
-      </div>
+      <figure className="flex flex-col bg-[#050505] lg:flex-1">
+        <div className="relative aspect-[16/10] overflow-hidden lg:aspect-auto lg:min-h-[380px] lg:flex-1">
+          <Image src={main.src} alt={main.alt} fill sizes="(min-width: 1024px) 66vw, 100vw" className="object-cover object-top-left" />
+        </div>
+        <FeedLabel label={main.label} live />
+      </figure>
       {rest.length > 0 && (
         <div className="grid grid-cols-2 gap-px">
           {rest.map((item) => (
@@ -82,10 +85,7 @@ function ProgrammeMedia({ media }: { media: Project["media"] }) {
               <div className="relative aspect-[16/10] overflow-hidden">
                 <Image src={item.src} alt={item.alt} fill sizes="(min-width: 1024px) 33vw, 50vw" className="object-cover object-top-left" />
               </div>
-              <figcaption className="flex h-7 min-w-0 items-center gap-2 bg-[#0b0b0b] px-2.5 font-mono text-[10.5px] tracking-[0.05em] whitespace-nowrap text-muted-foreground uppercase">
-                <span aria-hidden className="size-1.5 shrink-0 rounded-full bg-line-2" />
-                <span className="truncate">{item.label}</span>
-              </figcaption>
+              <FeedLabel label={item.label} />
             </figure>
           ))}
         </div>
@@ -112,5 +112,14 @@ function PreviewMedia({ media }: { media: Project["media"] }) {
         </div>
       ))}
     </div>
+  );
+}
+
+function FeedLabel({ label, live = false }: { label: string; live?: boolean }) {
+  return (
+    <figcaption className="flex h-7 min-w-0 items-center gap-2 border-t border-line bg-[#0b0b0b] px-2.5 font-mono text-[10.5px] tracking-[0.05em] whitespace-nowrap text-muted-foreground uppercase">
+      <span aria-hidden className={cn("size-1.5 shrink-0 rounded-full", live ? "bg-tally" : "bg-line-2")} />
+      <span className="truncate">{label}</span>
+    </figcaption>
   );
 }

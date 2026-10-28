@@ -6,7 +6,7 @@ import { Chyron } from "./chyron";
 
 const [firstName, lastName] = profile.name.split(" ");
 
-const status = projects.map((project) => ({ text: `${project.name} · ${project.category}`, status: project.status }));
+const status = projects.map((project) => ({ text: project.name, detail: project.category, status: project.status }));
 
 export function Hero() {
   return (

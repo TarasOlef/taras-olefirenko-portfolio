@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { ArrowDown, Pause, Play } from "lucide-react";
 
-type ChyronItem = { time?: string; text: string; status?: string };
+type ChyronItem = { time?: string; text: string; detail?: string; status?: string };
 
 const HOLD_MS = 4000;
 
@@ -35,14 +35,17 @@ export function Chyron({ label, items }: { label: string; items: ChyronItem[] })
         {items.map((entry) => (
           <li key={entry.text}>
             {entry.text}
+            {entry.detail && `, ${entry.detail}`}
             {entry.status && `: ${entry.status}`}
           </li>
         ))}
       </ul>
       <p aria-hidden className="flex min-w-0 items-center overflow-hidden px-5 font-mono text-[13px] text-muted-foreground">
-        <span key={current} className="block min-w-0 animate-[caption-in_220ms_var(--ease-out)_both] truncate">
+        <span key={current} className="block min-w-0 animate-[caption-in_220ms_var(--ease-out)_both] max-sm:line-clamp-2 max-sm:text-[11.5px] max-sm:leading-snug sm:truncate">
           {item.time && <b className="tabular font-medium text-foreground">{item.time} · </b>}
           {item.text}
+          {/* En móvil se cae el detalle para que el estado siempre se lea */}
+          {item.detail && <span className="max-sm:hidden"> · {item.detail}</span>}
           {item.status && <b className="font-medium text-foreground"> · {item.status}</b>}
         </span>
       </p>

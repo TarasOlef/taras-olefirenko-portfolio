@@ -29,7 +29,7 @@ export const projects: Project[] = [
       {
         src: "/projects/encia/encia-hoy.webp",
         alt: "Pantalla Hoy de Encía: euros en juego por presupuestos, cobros, huecos y revisiones, con acciones por WhatsApp",
-        label: "Hoy · € en juego",
+        label: "Hoy · € en juego · datos ficticios",
       },
       {
         src: "/projects/encia/encia-visor-3d.webp",
