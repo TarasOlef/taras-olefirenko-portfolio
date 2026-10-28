@@ -1,5 +1,5 @@
 import { ArrowDown } from "lucide-react";
-import { buttonVariants } from "@/components/ui/button";
+import { ButtonIcon, buttonVariants } from "@/components/ui/button";
 import { profile } from "@/data/profile";
 import { projects } from "@/data/projects";
 import { Chyron } from "./chyron";
@@ -35,7 +35,9 @@ export function Hero() {
           <div className="flex flex-wrap gap-3">
             <a href="#proyectos" className={buttonVariants()}>
               Ver proyectos
-              <ArrowDown aria-hidden strokeWidth={1.75} />
+              <ButtonIcon direction="down">
+                <ArrowDown aria-hidden strokeWidth={1.75} />
+              </ButtonIcon>
             </a>
             <a href="#contacto" className={buttonVariants({ variant: "outline" })}>
               Hablemos

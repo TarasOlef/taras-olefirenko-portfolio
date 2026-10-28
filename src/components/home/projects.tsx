@@ -8,7 +8,7 @@ import { SectionHead } from "./section-head";
 export function Projects({ index, total }: { index: number; total: number }) {
   const [programme, ...previews] = projects;
   return (
-    <section id="proyectos" className="px-(--gutter) pt-[clamp(64px,8vw,120px)] pb-[clamp(48px,6vw,96px)]">
+    <section id="proyectos" className="px-(--gutter) pt-[clamp(96px,10vw,160px)] pb-[clamp(64px,7vw,112px)]">
       <SectionHead index={index} total={total} title="Lo que construyo">
         <p>
           Lo que tengo publicado y lo que estoy construyendo ahora, <strong className="font-semibold text-foreground">con su estado real</strong>.

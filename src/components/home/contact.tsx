@@ -1,12 +1,12 @@
 import { ArrowUpRight } from "lucide-react";
-import { buttonVariants } from "@/components/ui/button";
+import { ButtonIcon, buttonVariants } from "@/components/ui/button";
 import { profile } from "@/data/profile";
 import { CopyEmail } from "./copy-email";
 import { SectionHead } from "./section-head";
 
 export function Contact({ index, total }: { index: number; total: number }) {
   return (
-    <section id="contacto" className="px-(--gutter) pt-[clamp(64px,8vw,120px)] pb-[clamp(48px,6vw,96px)]">
+    <section id="contacto" className="px-(--gutter) pt-[clamp(96px,10vw,160px)] pb-[clamp(64px,7vw,112px)]">
       <SectionHead index={index} total={total} title="Cuéntame qué quieres automatizar">
         <p>
           Escríbeme y <strong className="font-semibold text-foreground">te respondo yo</strong>, normalmente el mismo día. Si eres una agencia, te explico cómo revenderlo con tu marca.
@@ -24,10 +24,16 @@ export function Contact({ index, total }: { index: number; total: number }) {
         </a>
         <CopyEmail email={profile.email} />
         <a href={profile.linkedin} target="_blank" rel="noreferrer" className={buttonVariants({ variant: "ghost" })}>
-          LinkedIn <ArrowUpRight aria-hidden strokeWidth={1.75} />
+          LinkedIn
+          <ButtonIcon>
+            <ArrowUpRight aria-hidden strokeWidth={1.75} />
+          </ButtonIcon>
         </a>
         <a href={profile.github} target="_blank" rel="noreferrer" className={buttonVariants({ variant: "ghost" })}>
-          GitHub <ArrowUpRight aria-hidden strokeWidth={1.75} />
+          GitHub
+          <ButtonIcon>
+            <ArrowUpRight aria-hidden strokeWidth={1.75} />
+          </ButtonIcon>
         </a>
       </div>
     </section>
