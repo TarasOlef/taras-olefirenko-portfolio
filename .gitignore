@@ -46,3 +46,6 @@ next-env.d.ts
 .env*.local
 
 docs/screenshots/**/*.png
+
+# capturas de revisión de impeccable
+.impeccable/review/
