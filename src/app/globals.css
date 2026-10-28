@@ -33,6 +33,8 @@
   --color-tile-2: var(--tile-2);
   --color-line: var(--line);
   --color-line-2: var(--line-2);
+  --color-label-strip: var(--label-strip);
+  --color-media-well: var(--media-well);
   --color-faint: var(--faint);
   --color-tally: var(--tally);
   --color-tally-foreground: var(--tally-foreground);
@@ -62,6 +64,8 @@
   --tile-2: #161616;
   --line: #242424;
   --line-2: #323232;
+  --label-strip: #0b0b0b;
+  --media-well: #050505;
   --muted: #161616;
   --muted-foreground: #a39f97;
   --faint: #6e6b66;
@@ -116,7 +120,7 @@
   :focus-visible {
     outline: 2px solid var(--tally);
     outline-offset: 3px;
-    border-radius: 2px;
+    border-radius: var(--radius-sm);
   }
 
   a,

@@ -19,7 +19,7 @@ Hecho:
 - Tokens de la dirección A en `src/app/globals.css`; fuentes Archivo (eje de anchura), Schibsted Grotesk y JetBrains Mono.
 - Shell: barra con reloj de Valencia (también en móvil), hero con rótulo (un elemento cada vez, pausable), proyectos en multipantalla, contacto con «Copiar correo», pie con reloj y «Volver arriba», 404, enlace para saltar al contenido.
 - Proyectos (pedido de Taras): Encía (encia.app, en desarrollo), PEAKR y PreRox (en desarrollo). Capturas reales: Encía a 2× desde la app (Hoy, visor 3D, WhatsApp); PreRox, las de App Store Connect (`01-welcome`, `02-goal`; las de `retired-rights-blocked` no se usan).
-- Revisión final de impeccable: veredicto «fix», arreglos aplicados y en segunda revisión.
+- Revisión final de impeccable: dos rondas (veredicto «fix»); todos los arreglos aplicados y comprobados. `DESIGN.md` y `.impeccable/design.json` escritos desde el código; el detector no encuentra nada.
 - `showcase-video` revisada y copiada en `.claude/skills/showcase-video` (ver `SOURCE.md`).
 
 Pendiente:
@@ -28,6 +28,8 @@ Pendiente:
 - Animaciones de scroll como ericduro.com y diseño de bencho.dev (pedido por Taras; bloqueado por la red).
 - Fila de cifras: fuera hasta que Taras confirme los números.
 - Herramientas para vídeo: faltan ImageMagick 7 y yt-dlp (se instalan en la fase 2).
+- Capturas de tienda de PEAKR (Google Play) y PreRox (App Store): Taras no quiere las actuales; las tiendas están bloqueadas por la red. Esperando acceso al repo, los dominios o que las suba.
+- Tema claro de las demos: comprometido en el brief, todavía sin tokens (fase 1).
 
 ## Decisiones
 

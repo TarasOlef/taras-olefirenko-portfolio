@@ -12,7 +12,7 @@ const buttonVariants = cva(
         ghost: "border-transparent text-muted-foreground hover:bg-tile-2 hover:text-foreground",
       },
       size: {
-        default: "h-11 px-[18px] text-[15px]",
+        default: "h-11 px-[18px] text-base",
         sm: "h-10 px-3.5 text-sm",
         lg: "h-12 px-5 text-base",
       },
