@@ -1,7 +1,7 @@
 export const profile = {
   name: "Taras Olefirenko",
   role: "Full-Stack · IA aplicada · Producto",
-  location: "L’Olleria / Valencia, España",
+  location: "Xàtiva, Valencia",
   email: "taras.ole9@gmail.com",
   photo: "/images/taras-profile.png",
   cv: "/TarasOlefirenkoCV.pdf",
@@ -15,10 +15,3 @@ export const profile = {
   availability:
     "Disponible para desarrollo full-stack, producto e IA aplicada a procesos reales.",
 } as const;
-
-export const impactClaims = [
-  "Problema",
-  "Producto",
-  "Software",
-  "Release",
-] as const;

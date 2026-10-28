@@ -1,103 +1,175 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #05070d;
-  --foreground: #eef6ff;
-}
+/*
+ * Dirección A · En directo (docs/BRIEF.md §5, .impeccable/surfaces/src-app-page-tsx.md)
+ * Negro de plató, losas de multipantalla y un único acento: el piloto rojo de emisión.
+ * La web es oscura; las demos usan el mismo sistema con tema claro (clase .light).
+ */
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-display: var(--font-space-grotesk);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Mundo A */
+  --color-tile: var(--tile);
+  --color-tile-2: var(--tile-2);
+  --color-line: var(--line);
+  --color-line-2: var(--line-2);
+  --color-faint: var(--faint);
+  --color-tally: var(--tally);
+  --color-tally-foreground: var(--tally-foreground);
+
+  --font-sans: var(--font-text);
+  --font-display: var(--font-display-face);
+  --font-mono: var(--font-code);
+  --font-heading: var(--font-display-face);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+
+  /* Curvas: ease-out fuerte para entrar, ease-in-out para mover */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
-  overflow-x: hidden;
+:root {
+  --radius: 0.375rem;
+
+  /* Plató */
+  --background: #080808;
+  --foreground: #eeebe5;
+  --tile: #101010;
+  --tile-2: #161616;
+  --line: #242424;
+  --line-2: #323232;
+  --muted: #161616;
+  --muted-foreground: #a39f97;
+  --faint: #6e6b66;
+
+  /* Piloto de emisión: lo que pasa ahora y la acción principal */
+  --tally: #ff4a2b;
+  --tally-foreground: #140603;
+
+  --card: var(--tile);
+  --card-foreground: var(--foreground);
+  --popover: var(--tile-2);
+  --popover-foreground: var(--foreground);
+  --primary: var(--tally);
+  --primary-foreground: var(--tally-foreground);
+  --secondary: var(--tile-2);
+  --secondary-foreground: var(--foreground);
+  --accent: var(--tile-2);
+  --accent-foreground: var(--foreground);
+  --destructive: #ff6a52;
+  --border: var(--line);
+  --input: var(--line-2);
+  --ring: var(--tally);
+
+  --gutter: clamp(16px, 3.2vw, 48px);
+  --bar-h: 73px;
+
+  color-scheme: dark;
 }
 
-h1,
-h2,
-h3 {
-  font-family: var(--font-space-grotesk), var(--font-geist-sans), Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    background: var(--background);
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--bar-h) + 16px);
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+    overflow-x: clip;
+  }
+
+  ::selection {
+    background: var(--tally);
+    color: var(--tally-foreground);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--tally);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  a,
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--background);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--line-2);
+    border-radius: 999px;
+    border: 2px solid var(--background);
+  }
 }
 
-html {
-  scroll-behavior: smooth;
-  background: var(--background);
+@utility tabular {
+  font-variant-numeric: tabular-nums;
 }
 
-::selection {
-  background: rgba(103, 232, 249, 0.28);
-  color: #ffffff;
+/* Archivo condensada, la voz de rótulo */
+@utility display-condensed {
+  font-family: var(--font-display-face);
+  font-stretch: 62%;
+  font-weight: 850;
+  text-transform: uppercase;
 }
 
-button,
-a {
-  -webkit-tap-highlight-color: transparent;
+/* Rótulo inferior: avanza sin parar; se detiene al pasar el ratón y con movimiento reducido */
+@keyframes chyron-roll {
+  to {
+    transform: translateX(-50%);
+  }
 }
 
-.nav-link {
-  position: relative;
-  padding-bottom: 0.25rem;
-  transition: color 180ms ease;
-}
-
-.nav-link::after {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 1px;
-  content: "";
-  transform: scaleX(0);
-  transform-origin: right;
-  background: linear-gradient(90deg, rgba(103, 232, 249, 0), rgba(103, 232, 249, 0.9));
-  transition: transform 220ms ease;
-}
-
-.nav-link:hover {
-  color: #ffffff;
-}
-
-.nav-link:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
-}
-
-.contact-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  min-height: 3rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 999px;
-  padding: 0.75rem 1rem;
-  color: rgb(203, 213, 225);
-  background: rgba(255, 255, 255, 0.035);
-  transition:
-    border-color 180ms ease,
-    background 180ms ease,
-    color 180ms ease,
-    transform 180ms ease;
-}
-
-.contact-link:hover {
-  border-color: rgba(103, 232, 249, 0.28);
-  background: rgba(255, 255, 255, 0.07);
-  color: #ffffff;
-  transform: translateY(-2px);
+@keyframes tally-blink {
+  50% {
+    opacity: 0.2;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
   *,
   *::before,
   *::after {
-    scroll-behavior: auto !important;
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;

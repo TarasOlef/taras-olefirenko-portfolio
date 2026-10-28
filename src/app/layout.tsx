@@ -1,74 +1,62 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Archivo, JetBrains_Mono, Schibsted_Grotesk } from "next/font/google";
+import { siteUrl } from "@/config/site";
 import { profile } from "@/data/profile";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const display = Archivo({
+  variable: "--font-display-face",
+  subsets: ["latin"],
+  axes: ["wdth"],
+});
+
+const text = Schibsted_Grotesk({
+  variable: "--font-text",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const code = JetBrains_Mono({
+  variable: "--font-code",
   subsets: ["latin"],
 });
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
-  subsets: ["latin"],
-});
-
-const siteUrl = "https://taras-olefirenko-portfolio.vercel.app";
+const title = "Taras Olefirenko · IA que hace el trabajo";
+const description =
+  "Construyo IA que atiende, reserva, vende e informa, y te enseño cómo lo hace: herramienta, latencia y coste de cada paso. Desarrollador en Xàtiva, Valencia.";
 
 export const metadata: Metadata = {
-  title: "Taras Olefirenko | Desarrollador Full-Stack con IA y automatización",
-  description:
-    "Portfolio de Taras Olefirenko: proyectos reales de software, apps móviles, IA aplicada, automatización, backend, frontend y productos publicados en producción.",
+  title,
+  description,
   metadataBase: new URL(siteUrl),
-  alternates: {
-    canonical: "/",
-  },
+  alternates: { canonical: "/" },
   authors: [{ name: profile.name }],
   creator: profile.name,
   openGraph: {
-    title: "Taras Olefirenko | Desarrollador Full-Stack con IA y automatización",
-    description:
-      "Portfolio de Taras Olefirenko: proyectos reales de software, apps móviles, IA aplicada, automatización, backend, frontend y productos publicados en producción.",
+    title,
+    description,
     url: siteUrl,
-    siteName: "Taras Olefirenko",
-    images: [
-      {
-        url: profile.photo,
-        width: 1200,
-        height: 630,
-        alt: "Portfolio de Taras Olefirenko",
-      },
-    ],
+    siteName: profile.name,
+    images: [{ url: profile.photo, alt: profile.name }],
     locale: "es_ES",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Taras Olefirenko | Desarrollador Full-Stack con IA y automatización",
-    description:
-      "Proyectos reales de software, apps móviles, IA aplicada, automatización y producto.",
+    title,
+    description,
     images: [profile.photo],
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export const viewport: Viewport = {
+  themeColor: "#080808",
+  colorScheme: "dark",
+};
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="es"
-      className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col bg-background text-foreground">
-        {children}
-      </body>
+    <html lang="es" className={`${display.variable} ${text.variable} ${code.variable}`}>
+      <body className="flex min-h-dvh flex-col">{children}</body>
     </html>
   );
 }

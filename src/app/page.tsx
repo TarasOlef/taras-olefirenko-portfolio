@@ -1,28 +1,19 @@
-import { About } from "@/components/About";
-import { AnimatedBackground } from "@/components/AnimatedBackground";
-import { Capabilities } from "@/components/Capabilities";
-import { ContactSection } from "@/components/ContactSection";
-import { FeaturedProjects } from "@/components/FeaturedProjects";
-import { Hero } from "@/components/Hero";
-import { ProcessTimeline } from "@/components/ProcessTimeline";
-import { ValueStrip } from "@/components/ValueStrip";
+import { Contact } from "@/components/home/contact";
+import { Hero } from "@/components/home/hero";
+import { Projects } from "@/components/home/projects";
+import { SiteFooter } from "@/components/shell/site-footer";
+import { SiteHeader } from "@/components/shell/site-header";
 
 export default function Home() {
   return (
-    <div className="relative flex-1">
-      <AnimatedBackground />
+    <>
+      <SiteHeader />
       <main>
         <Hero />
-        <ValueStrip />
-        <About />
-        <FeaturedProjects />
-        <Capabilities />
-        <ProcessTimeline />
-        <ContactSection />
+        <Projects index={1} total={2} />
+        <Contact index={2} total={2} />
       </main>
-      <footer className="px-5 pb-10 text-center text-xs text-slate-500 sm:px-8 lg:px-10">
-        Productos reales. Software útil. IA cuando aporta valor.
-      </footer>
-    </div>
+      <SiteFooter />
+    </>
   );
 }
