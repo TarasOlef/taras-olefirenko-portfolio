@@ -17,7 +17,9 @@ Hecho:
 - `PRODUCT.md` a partir del brief.
 - Stack: Next 16.4.3, React 19.3, `motion` (fuera framer-motion), Base UI + cva + `cn`, Tailwind v4 por Turbopack, knip, Playwright, `scripts/shoot.mjs` (de Encía), `components.json` base-nova.
 - Tokens de la dirección A en `src/app/globals.css`; fuentes Archivo (eje de anchura), Schibsted Grotesk y JetBrains Mono.
-- Shell: barra con reloj de Valencia, hero con rótulo (pausable), proyectos terminados, contacto con «Copiar correo», pie con reloj y «Volver arriba», 404, enlace para saltar al contenido.
+- Shell: barra con reloj de Valencia (también en móvil), hero con rótulo (un elemento cada vez, pausable), proyectos en multipantalla, contacto con «Copiar correo», pie con reloj y «Volver arriba», 404, enlace para saltar al contenido.
+- Proyectos (pedido de Taras): Encía (encia.app, en desarrollo), PEAKR y PreRox (en desarrollo). Capturas reales: Encía a 2× desde la app (Hoy, visor 3D, WhatsApp); PreRox, las de App Store Connect (`01-welcome`, `02-goal`; las de `retired-rights-blocked` no se usan).
+- Revisión final de impeccable: veredicto «fix», arreglos aplicados y en segunda revisión.
 - `showcase-video` revisada y copiada en `.claude/skills/showcase-video` (ver `SOURCE.md`).
 
 Pendiente:
@@ -38,3 +40,5 @@ Pendiente:
 - 2026-10-28: `profile.ts` decía «L’Olleria / Valencia»; el brief dice Xàtiva. Se pone Xàtiva (pendiente de que Taras lo confirme).
 - 2026-10-28: los casos antiguos (`/projects/[slug]`) siguen con su aspecto anterior, ya con `motion/react`, hasta rehacerlos como «Otros proyectos» en la fase 2. «Fábrica de muebles» no sale en la portada (caso en preparación). El botón «Descargar CV» de los casos apunta a `/TarasOlefirenkoCV.pdf`, que no existe en `public/`.
 - 2026-10-28: hasta que existan las demos, el rótulo del hero muestra el estado real de los proyectos publicados, no eventos inventados.
+- 2026-10-28: Taras quita EstilIA, el ticketing (y fábrica de muebles) y pide Encía, el asistente de voz de encia.app y PreRox «tal cual están». En el repo de Encía no hay código de voz (ni Realtime ni WebRTC): la ficha dice «asistente de IA» hasta que Taras confirme la voz.
+- 2026-10-28: la etiqueta «Portfolio · 2026» sobre el nombre se mantiene porque la pide el brief (§11.1), aunque impeccable la desaconseja.
