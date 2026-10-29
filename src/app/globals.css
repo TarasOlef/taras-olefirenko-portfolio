@@ -57,22 +57,22 @@
 :root {
   --radius: 0.375rem;
 
-  /* Plató */
-  --background: #080808;
-  --foreground: #eeebe5;
-  --tile: #101010;
-  --tile-2: #161616;
-  --line: #242424;
-  --line-2: #323232;
-  --label-strip: #0b0b0b;
-  --media-well: #050505;
-  --muted: #161616;
-  --muted-foreground: #a39f97;
-  --faint: #6e6b66;
+  /* Sala de realización de noche: azul tinta (OKLCH, tono 256) y tinta de papel cálida */
+  --background: #0a1525; /* oklch(0.195 0.036 256) */
+  --foreground: #f4f0e7; /* oklch(0.955 0.012 85) */
+  --tile: #111d2f; /* oklch(0.23 0.038 256) */
+  --tile-2: #182638; /* oklch(0.265 0.04 256) */
+  --line: #28364a; /* oklch(0.33 0.04 256) */
+  --line-2: #3b4a5f; /* oklch(0.405 0.04 256) */
+  --label-strip: #0d1929; /* oklch(0.21 0.036 256) */
+  --media-well: #040c19; /* oklch(0.155 0.03 256) */
+  --muted: var(--tile-2);
+  --muted-foreground: #aeb8c7; /* oklch(0.78 0.024 256) */
+  --faint: #758192; /* oklch(0.6 0.03 256) */
 
   /* Piloto de emisión: lo que pasa ahora y la acción principal */
-  --tally: #ff4a2b;
-  --tally-foreground: #140603;
+  --tally: #fd5939; /* oklch(0.68 0.205 33) */
+  --tally-foreground: #1e0805;
 
   --card: var(--tile);
   --card-foreground: var(--foreground);
