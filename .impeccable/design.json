@@ -1,190 +1,205 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-28T19:00:00Z",
+  "generatedAt": "2026-10-29T09:00:00Z",
   "title": "Design System: Taras Olefirenko",
   "extensions": {
     "colorMeta": {
       "tally": {
         "role": "primary",
         "displayName": "Rojo de emisión",
-        "canonical": "oklch(66.7% 0.222 32.2)",
+        "hex": "#fd5939",
+        "canonical": "oklch(0.68 0.205 33)",
         "tonalRamp": [
-          "oklch(15% 0.200 32.2)",
-          "oklch(26% 0.200 32.2)",
-          "oklch(37% 0.200 32.2)",
-          "oklch(48% 0.200 32.2)",
-          "oklch(60% 0.200 32.2)",
-          "oklch(71% 0.200 32.2)",
-          "oklch(83% 0.200 32.2)",
-          "oklch(95% 0.200 32.2)"
-        ]
+          "oklch(0.15 0.16 33)",
+          "oklch(0.26 0.16 33)",
+          "oklch(0.37 0.205 33)",
+          "oklch(0.48 0.205 33)",
+          "oklch(0.6 0.205 33)",
+          "oklch(0.71 0.205 33)",
+          "oklch(0.83 0.205 33)",
+          "oklch(0.95 0.16 33)"
+        ],
+        "contrast": "5.81:1 sobre background, 5.37:1 sobre tile"
       },
       "tally-foreground": {
         "role": "primary",
         "displayName": "Tinta sobre rojo",
-        "canonical": "oklch(14.5% 0.029 39.1)",
+        "hex": "#1e0805",
+        "canonical": "oklch(0.171 0.04 31.7)",
         "tonalRamp": [
-          "oklch(15% 0.029 39.1)",
-          "oklch(26% 0.029 39.1)",
-          "oklch(37% 0.029 39.1)",
-          "oklch(48% 0.029 39.1)",
-          "oklch(60% 0.029 39.1)",
-          "oklch(71% 0.029 39.1)",
-          "oklch(83% 0.029 39.1)",
-          "oklch(95% 0.029 39.1)"
-        ]
+          "oklch(0.15 0.04 31.7)",
+          "oklch(0.26 0.04 31.7)",
+          "oklch(0.37 0.04 31.7)",
+          "oklch(0.48 0.04 31.7)",
+          "oklch(0.6 0.04 31.7)",
+          "oklch(0.71 0.04 31.7)",
+          "oklch(0.83 0.04 31.7)",
+          "oklch(0.95 0.04 31.7)"
+        ],
+        "contrast": "6.1:1 sobre tally"
       },
       "background": {
         "role": "neutral",
-        "displayName": "Negro de plató",
-        "canonical": "oklch(13.4% 0.000 89.9)",
+        "displayName": "Azul tinta de noche",
+        "hex": "#0a1525",
+        "canonical": "oklch(0.195 0.036 256)",
         "tonalRamp": [
-          "oklch(15% 0.000 89.9)",
-          "oklch(26% 0.000 89.9)",
-          "oklch(37% 0.000 89.9)",
-          "oklch(48% 0.000 89.9)",
-          "oklch(60% 0.000 89.9)",
-          "oklch(71% 0.000 89.9)",
-          "oklch(83% 0.000 89.9)",
-          "oklch(95% 0.000 89.9)"
+          "oklch(0.15 0.036 256)",
+          "oklch(0.26 0.036 256)",
+          "oklch(0.37 0.036 256)",
+          "oklch(0.48 0.036 256)",
+          "oklch(0.6 0.036 256)",
+          "oklch(0.71 0.036 256)",
+          "oklch(0.83 0.036 256)",
+          "oklch(0.95 0.036 256)"
         ]
       },
       "tile": {
         "role": "neutral",
         "displayName": "Losa",
-        "canonical": "oklch(17.3% 0.000 89.9)",
+        "hex": "#111d2f",
+        "canonical": "oklch(0.23 0.038 256)",
         "tonalRamp": [
-          "oklch(15% 0.000 89.9)",
-          "oklch(26% 0.000 89.9)",
-          "oklch(37% 0.000 89.9)",
-          "oklch(48% 0.000 89.9)",
-          "oklch(60% 0.000 89.9)",
-          "oklch(71% 0.000 89.9)",
-          "oklch(83% 0.000 89.9)",
-          "oklch(95% 0.000 89.9)"
+          "oklch(0.15 0.038 256)",
+          "oklch(0.26 0.038 256)",
+          "oklch(0.37 0.038 256)",
+          "oklch(0.48 0.038 256)",
+          "oklch(0.6 0.038 256)",
+          "oklch(0.71 0.038 256)",
+          "oklch(0.83 0.038 256)",
+          "oklch(0.95 0.038 256)"
         ]
       },
       "tile-2": {
         "role": "neutral",
         "displayName": "Losa encendida",
-        "canonical": "oklch(20.0% 0.000 89.9)",
+        "hex": "#182638",
+        "canonical": "oklch(0.265 0.04 256)",
         "tonalRamp": [
-          "oklch(15% 0.000 89.9)",
-          "oklch(26% 0.000 89.9)",
-          "oklch(37% 0.000 89.9)",
-          "oklch(48% 0.000 89.9)",
-          "oklch(60% 0.000 89.9)",
-          "oklch(71% 0.000 89.9)",
-          "oklch(83% 0.000 89.9)",
-          "oklch(95% 0.000 89.9)"
+          "oklch(0.15 0.04 256)",
+          "oklch(0.26 0.04 256)",
+          "oklch(0.37 0.04 256)",
+          "oklch(0.48 0.04 256)",
+          "oklch(0.6 0.04 256)",
+          "oklch(0.71 0.04 256)",
+          "oklch(0.83 0.04 256)",
+          "oklch(0.95 0.04 256)"
         ]
       },
       "label-strip": {
         "role": "neutral",
         "displayName": "Tira de etiqueta",
-        "canonical": "oklch(15.0% 0.000 89.9)",
+        "hex": "#0d1929",
+        "canonical": "oklch(0.21 0.036 256)",
         "tonalRamp": [
-          "oklch(15% 0.000 89.9)",
-          "oklch(26% 0.000 89.9)",
-          "oklch(37% 0.000 89.9)",
-          "oklch(48% 0.000 89.9)",
-          "oklch(60% 0.000 89.9)",
-          "oklch(71% 0.000 89.9)",
-          "oklch(83% 0.000 89.9)",
-          "oklch(95% 0.000 89.9)"
-        ],
-        "note": "Literal en los componentes (bg-[#0b0b0b] / bg-[#050505]); aún no es propiedad personalizada en globals.css."
+          "oklch(0.15 0.036 256)",
+          "oklch(0.26 0.036 256)",
+          "oklch(0.37 0.036 256)",
+          "oklch(0.48 0.036 256)",
+          "oklch(0.6 0.036 256)",
+          "oklch(0.71 0.036 256)",
+          "oklch(0.83 0.036 256)",
+          "oklch(0.95 0.036 256)"
+        ]
       },
       "media-well": {
         "role": "neutral",
         "displayName": "Pozo de imagen",
-        "canonical": "oklch(11.5% 0.000 89.9)",
+        "hex": "#040c19",
+        "canonical": "oklch(0.155 0.03 256)",
         "tonalRamp": [
-          "oklch(15% 0.000 89.9)",
-          "oklch(26% 0.000 89.9)",
-          "oklch(37% 0.000 89.9)",
-          "oklch(48% 0.000 89.9)",
-          "oklch(60% 0.000 89.9)",
-          "oklch(71% 0.000 89.9)",
-          "oklch(83% 0.000 89.9)",
-          "oklch(95% 0.000 89.9)"
-        ],
-        "note": "Literal en los componentes (bg-[#0b0b0b] / bg-[#050505]); aún no es propiedad personalizada en globals.css."
+          "oklch(0.15 0.03 256)",
+          "oklch(0.26 0.03 256)",
+          "oklch(0.37 0.03 256)",
+          "oklch(0.48 0.03 256)",
+          "oklch(0.6 0.03 256)",
+          "oklch(0.71 0.03 256)",
+          "oklch(0.83 0.03 256)",
+          "oklch(0.95 0.03 256)"
+        ]
       },
       "line": {
         "role": "neutral",
         "displayName": "Filete",
-        "canonical": "oklch(26.0% 0.000 89.9)",
+        "hex": "#28364a",
+        "canonical": "oklch(0.33 0.04 256)",
         "tonalRamp": [
-          "oklch(15% 0.000 89.9)",
-          "oklch(26% 0.000 89.9)",
-          "oklch(37% 0.000 89.9)",
-          "oklch(48% 0.000 89.9)",
-          "oklch(60% 0.000 89.9)",
-          "oklch(71% 0.000 89.9)",
-          "oklch(83% 0.000 89.9)",
-          "oklch(95% 0.000 89.9)"
+          "oklch(0.15 0.04 256)",
+          "oklch(0.26 0.04 256)",
+          "oklch(0.37 0.04 256)",
+          "oklch(0.48 0.04 256)",
+          "oklch(0.6 0.04 256)",
+          "oklch(0.71 0.04 256)",
+          "oklch(0.83 0.04 256)",
+          "oklch(0.95 0.04 256)"
         ]
       },
       "line-2": {
         "role": "neutral",
         "displayName": "Filete fuerte",
-        "canonical": "oklch(31.7% 0.000 89.9)",
+        "hex": "#3b4a5f",
+        "canonical": "oklch(0.405 0.04 256)",
         "tonalRamp": [
-          "oklch(15% 0.000 89.9)",
-          "oklch(26% 0.000 89.9)",
-          "oklch(37% 0.000 89.9)",
-          "oklch(48% 0.000 89.9)",
-          "oklch(60% 0.000 89.9)",
-          "oklch(71% 0.000 89.9)",
-          "oklch(83% 0.000 89.9)",
-          "oklch(95% 0.000 89.9)"
+          "oklch(0.15 0.04 256)",
+          "oklch(0.26 0.04 256)",
+          "oklch(0.37 0.04 256)",
+          "oklch(0.48 0.04 256)",
+          "oklch(0.6 0.04 256)",
+          "oklch(0.71 0.04 256)",
+          "oklch(0.83 0.04 256)",
+          "oklch(0.95 0.04 256)"
         ]
       },
       "foreground": {
         "role": "neutral",
-        "displayName": "Tinta cálida",
-        "canonical": "oklch(94.1% 0.009 84.6)",
+        "displayName": "Tinta de papel",
+        "hex": "#f4f0e7",
+        "canonical": "oklch(0.955 0.012 85)",
         "tonalRamp": [
-          "oklch(15% 0.009 84.6)",
-          "oklch(26% 0.009 84.6)",
-          "oklch(37% 0.009 84.6)",
-          "oklch(48% 0.009 84.6)",
-          "oklch(60% 0.009 84.6)",
-          "oklch(71% 0.009 84.6)",
-          "oklch(83% 0.009 84.6)",
-          "oklch(95% 0.009 84.6)"
-        ]
+          "oklch(0.15 0.012 85)",
+          "oklch(0.26 0.012 85)",
+          "oklch(0.37 0.012 85)",
+          "oklch(0.48 0.012 85)",
+          "oklch(0.6 0.012 85)",
+          "oklch(0.71 0.012 85)",
+          "oklch(0.83 0.012 85)",
+          "oklch(0.95 0.012 85)"
+        ],
+        "contrast": "16.1:1 sobre background, 14.88:1 sobre tile"
       },
       "muted-foreground": {
         "role": "neutral",
         "displayName": "Tinta secundaria",
-        "canonical": "oklch(70.4% 0.012 84.6)",
+        "hex": "#aeb8c7",
+        "canonical": "oklch(0.78 0.024 256)",
         "tonalRamp": [
-          "oklch(15% 0.012 84.6)",
-          "oklch(26% 0.012 84.6)",
-          "oklch(37% 0.012 84.6)",
-          "oklch(48% 0.012 84.6)",
-          "oklch(60% 0.012 84.6)",
-          "oklch(71% 0.012 84.6)",
-          "oklch(83% 0.012 84.6)",
-          "oklch(95% 0.012 84.6)"
-        ]
+          "oklch(0.15 0.024 256)",
+          "oklch(0.26 0.024 256)",
+          "oklch(0.37 0.024 256)",
+          "oklch(0.48 0.024 256)",
+          "oklch(0.6 0.024 256)",
+          "oklch(0.71 0.024 256)",
+          "oklch(0.83 0.024 256)",
+          "oklch(0.95 0.024 256)"
+        ],
+        "contrast": "9.14:1 sobre background, 8.45:1 sobre tile"
       },
       "faint": {
         "role": "neutral",
         "displayName": "Tinta apagada",
-        "canonical": "oklch(52.9% 0.009 80.7)",
+        "hex": "#758192",
+        "canonical": "oklch(0.6 0.03 256)",
         "tonalRamp": [
-          "oklch(15% 0.009 80.7)",
-          "oklch(26% 0.009 80.7)",
-          "oklch(37% 0.009 80.7)",
-          "oklch(48% 0.009 80.7)",
-          "oklch(60% 0.009 80.7)",
-          "oklch(71% 0.009 80.7)",
-          "oklch(83% 0.009 80.7)",
-          "oklch(95% 0.009 80.7)"
-        ]
+          "oklch(0.15 0.03 256)",
+          "oklch(0.26 0.03 256)",
+          "oklch(0.37 0.03 256)",
+          "oklch(0.48 0.03 256)",
+          "oklch(0.6 0.03 256)",
+          "oklch(0.71 0.03 256)",
+          "oklch(0.83 0.03 256)",
+          "oklch(0.95 0.03 256)"
+        ],
+        "contrast": "4.63:1 sobre background, 4.28:1 sobre tile; solo contorno del apellido, no texto"
       }
     },
     "typographyMeta": {
@@ -268,7 +283,7 @@
       }
     ],
     "focus": {
-      "value": "outline 2px solid var(--tally); outline-offset 3px",
+      "value": "outline 2px solid var(--tally); outline-offset 3px; border-radius var(--radius-sm)",
       "purpose": "Anillo de foco único en todo el sitio."
     },
     "breakpoints": [
@@ -298,7 +313,7 @@
       "refersTo": "button-primary",
       "description": "La acción principal de cada bloque, en rojo de emisión. Uno por bloque.",
       "html": "<button class=\"ds-btn-primary\">Ver proyectos <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 5v14\"/><path d=\"m19 12-7 7-7-7\"/></svg></button>",
-      "css": ".ds-btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:44px;padding:0 18px;border:1px solid transparent;border-radius:9999px;font-family:var(--font-text, 'Schibsted Grotesk'), system-ui, sans-serif;font-weight:600;font-size:15px;white-space:nowrap;cursor:pointer;transition:transform 150ms cubic-bezier(0.23,1,0.32,1);background:var(--tally, #ff4a2b);color:var(--tally-foreground, #140603);} .ds-btn-primary:hover{background:color-mix(in oklch,var(--tally, #ff4a2b),white 10%);} .ds-btn-primary:focus-visible{outline:2px solid var(--tally, #ff4a2b);outline-offset:3px;} .ds-btn-primary:active{transform:scale(0.97);}"
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:44px;padding:0 18px;border:1px solid transparent;border-radius:9999px;font-family:var(--font-text, 'Schibsted Grotesk'), system-ui, sans-serif;font-weight:600;font-size:15px;white-space:nowrap;cursor:pointer;transition:transform 150ms cubic-bezier(0.23,1,0.32,1);background:var(--tally, #fd5939);color:var(--tally-foreground, #1e0805);} .ds-btn-primary:hover{background:color-mix(in oklch,var(--tally, #fd5939),white 10%);} .ds-btn-primary:focus-visible{outline:2px solid var(--tally, #fd5939);outline-offset:3px;} .ds-btn-primary:active{transform:scale(0.97);}"
     },
     {
       "name": "Botón de contorno",
@@ -306,7 +321,7 @@
       "refersTo": "button-outline",
       "description": "Segunda acción junto al principal: Hablemos, Copiar correo.",
       "html": "<button class=\"ds-btn-outline\">Hablemos</button>",
-      "css": ".ds-btn-outline{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:44px;padding:0 18px;border:1px solid transparent;border-radius:9999px;font-family:var(--font-text, 'Schibsted Grotesk'), system-ui, sans-serif;font-weight:600;font-size:15px;white-space:nowrap;cursor:pointer;transition:transform 150ms cubic-bezier(0.23,1,0.32,1);background:transparent;border-color:var(--line-2, #323232);color:var(--foreground, #eeebe5);} .ds-btn-outline:hover{background:var(--tile-2, #161616);} .ds-btn-outline:focus-visible{outline:2px solid var(--tally, #ff4a2b);outline-offset:3px;} .ds-btn-outline:active{transform:scale(0.97);}"
+      "css": ".ds-btn-outline{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:44px;padding:0 18px;border:1px solid transparent;border-radius:9999px;font-family:var(--font-text, 'Schibsted Grotesk'), system-ui, sans-serif;font-weight:600;font-size:15px;white-space:nowrap;cursor:pointer;transition:transform 150ms cubic-bezier(0.23,1,0.32,1);background:transparent;border-color:var(--line-2, #3b4a5f);color:var(--foreground, #f4f0e7);} .ds-btn-outline:hover{background:var(--tile-2, #182638);} .ds-btn-outline:focus-visible{outline:2px solid var(--tally, #fd5939);outline-offset:3px;} .ds-btn-outline:active{transform:scale(0.97);}"
     },
     {
       "name": "Botón fantasma",
@@ -314,7 +329,7 @@
       "refersTo": "button-ghost",
       "description": "Salidas a terceros (LinkedIn, GitHub) con flecha diagonal.",
       "html": "<a class=\"ds-btn-ghost\" href=\"#\">LinkedIn <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"/><path d=\"M7 17 17 7\"/></svg></a>",
-      "css": ".ds-btn-ghost{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:44px;padding:0 18px;border:1px solid transparent;border-radius:9999px;font-family:var(--font-text, 'Schibsted Grotesk'), system-ui, sans-serif;font-weight:600;font-size:15px;white-space:nowrap;cursor:pointer;transition:transform 150ms cubic-bezier(0.23,1,0.32,1);text-decoration:none;background:transparent;color:var(--muted-foreground, #a39f97);} .ds-btn-ghost:hover{background:var(--tile-2, #161616);color:var(--foreground, #eeebe5);} .ds-btn-ghost:focus-visible{outline:2px solid var(--tally, #ff4a2b);outline-offset:3px;} .ds-btn-ghost:active{transform:scale(0.97);}"
+      "css": ".ds-btn-ghost{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:44px;padding:0 18px;border:1px solid transparent;border-radius:9999px;font-family:var(--font-text, 'Schibsted Grotesk'), system-ui, sans-serif;font-weight:600;font-size:15px;white-space:nowrap;cursor:pointer;transition:transform 150ms cubic-bezier(0.23,1,0.32,1);text-decoration:none;background:transparent;color:var(--muted-foreground, #aeb8c7);} .ds-btn-ghost:hover{background:var(--tile-2, #182638);color:var(--foreground, #f4f0e7);} .ds-btn-ghost:focus-visible{outline:2px solid var(--tally, #fd5939);outline-offset:3px;} .ds-btn-ghost:active{transform:scale(0.97);}"
     },
     {
       "name": "Barra fija",
@@ -322,7 +337,7 @@
       "refersTo": "header-bar",
       "description": "Nombre con piloto, anclas, reloj de Valencia en mono y botón principal pequeño.",
       "html": "<header class=\"ds-bar\"><a class=\"ds-bar-name\" href=\"#\"><span class=\"ds-bar-pilot\"></span>Taras Olefirenko</a><nav class=\"ds-bar-nav\"><a href=\"#\">Proyectos</a><a href=\"#\">Contacto</a></nav><p class=\"ds-bar-clock\">Valencia <time>19:48:59</time></p><a class=\"ds-bar-cta\" href=\"#\">Escríbeme</a></header>",
-      "css": ".ds-bar{display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;gap:28px;height:73px;padding:0 32px;background:var(--background, #080808);border-bottom:1px solid var(--line, #242424);} .ds-bar-name{display:flex;align-items:center;gap:10px;font-family:var(--font-display-face, Archivo), 'Arial Narrow', sans-serif;font-stretch:62%;font-weight:850;text-transform:uppercase;font-size:18px;letter-spacing:0.02em;color:var(--foreground, #eeebe5);text-decoration:none;} .ds-bar-pilot{width:10px;height:10px;border-radius:9999px;background:var(--tally, #ff4a2b);} .ds-bar-nav{display:flex;justify-content:center;gap:28px;font-family:var(--font-text, 'Schibsted Grotesk'), system-ui, sans-serif;font-size:14px;} .ds-bar-nav a{color:var(--muted-foreground, #a39f97);text-decoration:none;} .ds-bar-nav a:hover{color:var(--foreground, #eeebe5);} .ds-bar-nav a:focus-visible,.ds-bar-cta:focus-visible,.ds-bar-name:focus-visible{outline:2px solid var(--tally, #ff4a2b);outline-offset:3px;} .ds-bar-clock{margin:0;display:flex;gap:10px;font-family:var(--font-code, 'JetBrains Mono'), ui-monospace, monospace;font-size:13px;color:var(--muted-foreground, #a39f97);} .ds-bar-clock time{color:var(--foreground, #eeebe5);font-weight:500;font-variant-numeric:tabular-nums;} .ds-bar-cta{display:inline-flex;align-items:center;height:40px;padding:0 14px;border-radius:9999px;background:var(--tally, #ff4a2b);color:var(--tally-foreground, #140603);font-family:var(--font-text, 'Schibsted Grotesk'), system-ui, sans-serif;font-weight:600;font-size:14px;text-decoration:none;transition:transform 150ms cubic-bezier(0.23,1,0.32,1);} .ds-bar-cta:hover{background:color-mix(in oklch,var(--tally, #ff4a2b),white 10%);} .ds-bar-cta:active{transform:scale(0.97);}"
+      "css": ".ds-bar{display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;gap:28px;height:73px;padding:0 32px;background:var(--background, #0a1525);border-bottom:1px solid var(--line, #28364a);} .ds-bar-name{display:flex;align-items:center;gap:10px;font-family:var(--font-display-face, Archivo), 'Arial Narrow', sans-serif;font-stretch:62%;font-weight:850;text-transform:uppercase;font-size:18px;letter-spacing:0.02em;color:var(--foreground, #f4f0e7);text-decoration:none;} .ds-bar-pilot{width:10px;height:10px;border-radius:9999px;background:var(--tally, #fd5939);} .ds-bar-nav{display:flex;justify-content:center;gap:28px;font-family:var(--font-text, 'Schibsted Grotesk'), system-ui, sans-serif;font-size:14px;} .ds-bar-nav a{color:var(--muted-foreground, #aeb8c7);text-decoration:none;} .ds-bar-nav a:hover{color:var(--foreground, #f4f0e7);} .ds-bar-nav a:focus-visible,.ds-bar-cta:focus-visible,.ds-bar-name:focus-visible{outline:2px solid var(--tally, #fd5939);outline-offset:3px;} .ds-bar-clock{margin:0;display:flex;gap:10px;font-family:var(--font-code, 'JetBrains Mono'), ui-monospace, monospace;font-size:13px;color:var(--muted-foreground, #aeb8c7);} .ds-bar-clock time{color:var(--foreground, #f4f0e7);font-weight:500;font-variant-numeric:tabular-nums;} .ds-bar-cta{display:inline-flex;align-items:center;height:40px;padding:0 14px;border-radius:9999px;background:var(--tally, #fd5939);color:var(--tally-foreground, #1e0805);font-family:var(--font-text, 'Schibsted Grotesk'), system-ui, sans-serif;font-weight:600;font-size:14px;text-decoration:none;transition:transform 150ms cubic-bezier(0.23,1,0.32,1);} .ds-bar-cta:hover{background:color-mix(in oklch,var(--tally, #fd5939),white 10%);} .ds-bar-cta:active{transform:scale(0.97);}"
     },
     {
       "name": "Chip de stack",
@@ -330,7 +345,7 @@
       "refersTo": "stack-chip",
       "description": "Tecnología usada en un proyecto; informativo, no se pulsa.",
       "html": "<ul class=\"ds-chips\"><li class=\"ds-chip\">Next.js</li><li class=\"ds-chip\">Supabase</li><li class=\"ds-chip\">AI SDK</li></ul>",
-      "css": ".ds-chips{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none;} .ds-chip{border:1px solid var(--line, #242424);border-radius:3.6px;padding:2px 6px;font-family:var(--font-code, 'JetBrains Mono'), ui-monospace, monospace;font-size:11px;color:var(--muted-foreground, #a39f97);}"
+      "css": ".ds-chips{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none;} .ds-chip{border:1px solid var(--line, #28364a);border-radius:3.6px;padding:2px 6px;font-family:var(--font-code, 'JetBrains Mono'), ui-monospace, monospace;font-size:11px;color:var(--muted-foreground, #aeb8c7);}"
     },
     {
       "name": "Señal de multipantalla",
@@ -338,7 +353,7 @@
       "refersTo": "slab",
       "description": "Cada proyecto como una señal: imagen en pozo negro, cuerpo y tira de etiqueta con piloto, código PGM/PVW y estado real.",
       "html": "<article class=\"ds-slab\"><div class=\"ds-slab-media\"></div><div class=\"ds-slab-body\"><h3 class=\"ds-slab-name\">PEAKR</h3><p class=\"ds-slab-cat\">App móvil con IA publicada en Google Play</p><p class=\"ds-slab-desc\">Controla calorías, hábitos y progreso personal con IA aplicada.</p></div><div class=\"ds-slab-strip\"><span class=\"ds-slab-state\"><span class=\"ds-pilot ds-pilot-on\"></span><span class=\"ds-slab-feed\">PVW</span>Publicada en Google Play</span><a class=\"ds-slab-link\" href=\"#\">Google Play <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"/><path d=\"M7 17 17 7\"/></svg></a></div></article>",
-      "css": ".ds-slab{display:flex;flex-direction:column;max-width:420px;overflow:hidden;border:1px solid var(--line, #242424);border-radius:4.8px;background:var(--tile, #101010);color:var(--foreground, #eeebe5);} .ds-slab-media{height:160px;background:#050505;border-bottom:1px solid var(--line, #242424);} .ds-slab-body{display:flex;flex-direction:column;gap:12px;padding:20px;} .ds-slab-name{margin:0;font-family:var(--font-display-face, Archivo), 'Arial Narrow', sans-serif;font-stretch:62%;font-weight:850;font-size:40px;line-height:0.92;} .ds-slab-cat{margin:0;font-family:var(--font-text, 'Schibsted Grotesk'), system-ui, sans-serif;font-size:14px;color:var(--muted-foreground, #a39f97);} .ds-slab-desc{margin:0;font-family:var(--font-text, 'Schibsted Grotesk'), system-ui, sans-serif;font-size:15px;color:color-mix(in oklch,var(--foreground, #eeebe5) 90%,transparent);} .ds-slab-strip{display:flex;align-items:center;justify-content:space-between;gap:12px;height:44px;padding:0 12px;border-top:1px solid var(--line, #242424);background:#0b0b0b;font-family:var(--font-code, 'JetBrains Mono'), ui-monospace, monospace;font-size:11px;letter-spacing:0.05em;text-transform:uppercase;} .ds-slab-state{display:flex;align-items:center;gap:8px;color:var(--foreground, #eeebe5);} .ds-pilot{width:7px;height:7px;border-radius:9999px;background:var(--line-2, #323232);} .ds-pilot-on{background:var(--tally, #ff4a2b);} .ds-slab-feed{color:var(--faint, #6e6b66);} .ds-slab-link{display:inline-flex;align-items:center;gap:4px;color:var(--foreground, #eeebe5);text-decoration:none;} .ds-slab-link:hover{color:var(--tally, #ff4a2b);} .ds-slab-link:focus-visible{outline:2px solid var(--tally, #ff4a2b);outline-offset:3px;}"
+      "css": ".ds-slab{display:flex;flex-direction:column;max-width:420px;overflow:hidden;border:1px solid var(--line, #28364a);border-radius:4.8px;background:var(--tile, #111d2f);color:var(--foreground, #f4f0e7);} .ds-slab-media{height:160px;background:var(--media-well, #040c19);border-bottom:1px solid var(--line, #28364a);} .ds-slab-body{display:flex;flex-direction:column;gap:12px;padding:20px;} .ds-slab-name{margin:0;font-family:var(--font-display-face, Archivo), 'Arial Narrow', sans-serif;font-stretch:62%;font-weight:850;font-size:40px;line-height:0.92;} .ds-slab-cat{margin:0;font-family:var(--font-text, 'Schibsted Grotesk'), system-ui, sans-serif;font-size:14px;color:var(--muted-foreground, #aeb8c7);} .ds-slab-desc{margin:0;font-family:var(--font-text, 'Schibsted Grotesk'), system-ui, sans-serif;font-size:15px;color:color-mix(in oklch,var(--foreground, #f4f0e7) 90%,transparent);} .ds-slab-strip{display:flex;align-items:center;justify-content:space-between;gap:12px;height:44px;padding:0 12px;border-top:1px solid var(--line, #28364a);background:var(--label-strip, #0d1929);font-family:var(--font-code, 'JetBrains Mono'), ui-monospace, monospace;font-size:11px;letter-spacing:0.05em;text-transform:uppercase;} .ds-slab-state{display:flex;align-items:center;gap:8px;color:var(--foreground, #f4f0e7);} .ds-pilot{width:7px;height:7px;border-radius:9999px;background:var(--line-2, #3b4a5f);} .ds-pilot-on{background:var(--tally, #fd5939);} .ds-slab-feed{color:var(--muted-foreground, #aeb8c7);} .ds-slab-link{display:inline-flex;align-items:center;gap:4px;color:var(--foreground, #f4f0e7);text-decoration:none;} .ds-slab-link:hover{color:var(--tally, #fd5939);} .ds-slab-link:focus-visible{outline:2px solid var(--tally, #fd5939);outline-offset:3px;}"
     },
     {
       "name": "Etiqueta de pantalla",
@@ -346,7 +361,7 @@
       "refersTo": "feed-label",
       "description": "La UMD de cada monitor dentro de la señal de programa: piloto de 6px y nombre de lo que muestra.",
       "html": "<figure class=\"ds-feed\"><div class=\"ds-feed-screen\"></div><figcaption class=\"ds-feed-label\"><span class=\"ds-feed-pilot ds-feed-pilot-on\"></span>Hoy · € en juego · datos ficticios</figcaption></figure>",
-      "css": ".ds-feed{margin:0;max-width:360px;background:#050505;} .ds-feed-screen{aspect-ratio:16/10;} .ds-feed-label{display:flex;align-items:center;gap:8px;height:28px;padding:0 10px;border-top:1px solid var(--line, #242424);background:#0b0b0b;font-family:var(--font-code, 'JetBrains Mono'), ui-monospace, monospace;font-size:10.5px;letter-spacing:0.05em;text-transform:uppercase;white-space:nowrap;color:var(--muted-foreground, #a39f97);} .ds-feed-pilot{width:6px;height:6px;border-radius:9999px;background:var(--line-2, #323232);flex-shrink:0;} .ds-feed-pilot-on{background:var(--tally, #ff4a2b);}"
+      "css": ".ds-feed{margin:0;max-width:360px;background:var(--media-well, #040c19);} .ds-feed-screen{aspect-ratio:16/10;} .ds-feed-label{display:flex;align-items:center;gap:8px;height:28px;padding:0 10px;border-top:1px solid var(--line, #28364a);background:var(--label-strip, #0d1929);font-family:var(--font-code, 'JetBrains Mono'), ui-monospace, monospace;font-size:10.5px;letter-spacing:0.05em;text-transform:uppercase;white-space:nowrap;color:var(--muted-foreground, #aeb8c7);} .ds-feed-pilot{width:6px;height:6px;border-radius:9999px;background:var(--line-2, #3b4a5f);flex-shrink:0;} .ds-feed-pilot-on{background:var(--tally, #fd5939);}"
     },
     {
       "name": "Rótulo inferior",
@@ -354,14 +369,14 @@
       "refersTo": "chyron",
       "description": "Barra a sangre con etiqueta roja y punto parpadeante; un elemento cada vez entra desde abajo y se sostiene 4 s; se puede pausar.",
       "html": "<div class=\"ds-chyron\"><p class=\"ds-chyron-label\"><span class=\"ds-chyron-dot\"></span>En marcha</p><p class=\"ds-chyron-text\"><span>Encía · Plataforma para clínicas dentales · <b>En desarrollo</b></span></p><button class=\"ds-chyron-btn\" aria-label=\"Pausar el rótulo\" aria-pressed=\"false\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"14\" y=\"4\" width=\"4\" height=\"16\" rx=\"1\"/><rect x=\"6\" y=\"4\" width=\"4\" height=\"16\" rx=\"1\"/></svg></button></div>",
-      "css": "@keyframes ds-caption-in{from{transform:translateY(100%);opacity:0;}} @keyframes ds-tally-blink{50%{opacity:0.2;}} .ds-chyron{display:grid;grid-template-columns:auto minmax(0,1fr) auto;height:52px;overflow:hidden;border-top:1px solid var(--line, #242424);border-bottom:1px solid var(--line, #242424);background:var(--background, #080808);} .ds-chyron-label{margin:0;display:flex;align-items:center;gap:10px;padding:0 20px 0 32px;background:var(--tally, #ff4a2b);color:var(--tally-foreground, #140603);font-family:var(--font-display-face, Archivo), 'Arial Narrow', sans-serif;font-stretch:62%;font-weight:850;text-transform:uppercase;font-size:18px;letter-spacing:0.04em;} .ds-chyron-dot{width:8px;height:8px;border-radius:9999px;background:var(--tally-foreground, #140603);animation:ds-tally-blink 1.2s steps(1) infinite;} .ds-chyron-text{margin:0;display:flex;align-items:center;min-width:0;padding:0 20px;font-family:var(--font-code, 'JetBrains Mono'), ui-monospace, monospace;font-size:13px;color:var(--muted-foreground, #a39f97);} .ds-chyron-text span{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;animation:ds-caption-in 220ms cubic-bezier(0.23,1,0.32,1) both;} .ds-chyron-text b{font-weight:500;color:var(--foreground, #eeebe5);} .ds-chyron-btn{display:grid;place-items:center;width:48px;border:0;border-left:1px solid var(--line, #242424);background:transparent;color:var(--muted-foreground, #a39f97);cursor:pointer;} .ds-chyron-btn:hover{color:var(--foreground, #eeebe5);} .ds-chyron-btn:focus-visible{outline:2px solid var(--tally, #ff4a2b);outline-offset:3px;} @media (prefers-reduced-motion: reduce){.ds-chyron-dot,.ds-chyron-text span{animation:none;}}"
+      "css": "@keyframes ds-caption-in{from{transform:translateY(100%);opacity:0;}} @keyframes ds-tally-blink{50%{opacity:0.2;}} .ds-chyron{display:grid;grid-template-columns:auto minmax(0,1fr) auto;height:52px;overflow:hidden;border-top:1px solid var(--line, #28364a);border-bottom:1px solid var(--line, #28364a);background:var(--background, #0a1525);} .ds-chyron-label{margin:0;display:flex;align-items:center;gap:10px;padding:0 20px 0 32px;background:var(--tally, #fd5939);color:var(--tally-foreground, #1e0805);font-family:var(--font-display-face, Archivo), 'Arial Narrow', sans-serif;font-stretch:62%;font-weight:850;text-transform:uppercase;font-size:18px;letter-spacing:0.04em;} .ds-chyron-dot{width:8px;height:8px;border-radius:9999px;background:var(--tally-foreground, #1e0805);animation:ds-tally-blink 1.2s steps(1) infinite;} .ds-chyron-text{margin:0;display:flex;align-items:center;min-width:0;padding:0 20px;font-family:var(--font-code, 'JetBrains Mono'), ui-monospace, monospace;font-size:13px;color:var(--muted-foreground, #aeb8c7);} .ds-chyron-text span{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;animation:ds-caption-in 220ms cubic-bezier(0.23,1,0.32,1) both;} .ds-chyron-text b{font-weight:500;color:var(--foreground, #f4f0e7);} .ds-chyron-btn{display:grid;place-items:center;width:48px;border:0;border-left:1px solid var(--line, #28364a);background:transparent;color:var(--muted-foreground, #aeb8c7);cursor:pointer;} .ds-chyron-btn:hover{color:var(--foreground, #f4f0e7);} .ds-chyron-btn:focus-visible{outline:2px solid var(--tally, #fd5939);outline-offset:3px;} @media (prefers-reduced-motion: reduce){.ds-chyron-dot,.ds-chyron-text span{animation:none;}}"
     }
   ],
   "narrative": {
     "northStar": "La sala de realización",
-    "overview": "**Creative North Star: \"La sala de realización\"**\n\nLa web es una realización de televisión en directo vista desde el control: un plató negro, una pared de multipantalla donde cada proyecto es una señal con su etiqueta y su piloto, y un rótulo inferior que va pasando lo que ocurre. El visitante no lee una promesa, mira la emisión. Todo lo que no es señal (fondos, losas, filetes) se retira hacia el negro para que la imagen y el piloto rojo manden.\n\nLa densidad es de mesa de mezclas: bloques grandes y rotundos de nombre y titular en Archivo condensada, y alrededor una capa fina de datos en mono (código de tiempo, escaleta, estado, etiqueta de pantalla) que da la sensación de que esto está funcionando ahora. Hay un solo color con voz, el rojo de emisión; el resto es una escala de grises neutros sobre tinta cálida. Sin sombras, sin degradados, sin cristal: la profundidad la ponen las losas un punto más claras que el plató y los filetes de 1px.\n\nEl mismo sistema viste las demos con tema claro de serie (enseñan negocios reales) y, en marca blanca, con el color de la agencia en lugar del rojo. Ese tema claro está comprometido en el brief pero todavía no existe en el código: no hay tokens `.light` en `globals.css`, y no deben inventarse aquí antes de construirlo.",
+    "overview": "**Creative North Star: \"La sala de realización\"**\n\nLa web es una realización de televisión en directo vista desde el control de noche: un plató en azul tinta, una pared de multipantalla donde cada proyecto es una señal con su etiqueta y su piloto, y un rótulo inferior que va pasando lo que ocurre. El visitante no lee una promesa, mira la emisión. Todo lo que no es señal (fondos, losas, filetes) se retira hacia ese azul de madrugada para que la imagen y el piloto rojo manden.\n\nLa densidad es de mesa de mezclas: bloques grandes y rotundos de nombre y titular en Archivo condensada, y alrededor una capa fina de datos en mono (código de tiempo, escaleta, estado, etiqueta de pantalla) que da la sensación de que esto está funcionando ahora. Hay un solo color con voz, el rojo de emisión; el resto es una escala de azules tinta del mismo tono (OKLCH 256) que solo cambia en luminosidad, con tinta de papel cálida encima. El azul frío y el papel cálido hacen que el rojo, también cálido, salte sin tener que gritar. Sin sombras, sin degradados, sin cristal: la profundidad la ponen las losas un punto más claras que el plató y los filetes de 1px.\n\nEl mismo sistema viste las demos con tema claro de serie (enseñan negocios reales) y, en marca blanca, con el color de la agencia en lugar del rojo. Ese tema claro está comprometido en el brief pero todavía no existe en el código: no hay tokens `.light` en `globals.css`, y no deben inventarse aquí antes de construirlo.",
     "keyCharacteristics": [
-      "Plató casi negro con losas tonales y filetes de 1px, nunca sombras.",
+      "Plató en azul tinta de noche con losas tonales del mismo tono y filetes de 1px, nunca sombras.",
       "Un único acento, el piloto rojo de emisión, reservado a lo que está en antena y a la acción principal.",
       "Archivo condensada al 62 % de anchura y peso 850, en mayúsculas, como voz de rótulo.",
       "Datos y etiquetas en JetBrains Mono, con cifras tabulares en horas e índices.",
@@ -376,7 +391,12 @@
       },
       {
         "name": "The Dark Switch Rule",
-        "body": "Un piloto apagado es `line-2` (#323232), nunca rojo atenuado ni gris de texto. Encendido o apagado, no hay término medio.",
+        "body": "Un piloto apagado es `line-2`, nunca rojo atenuado ni el color de un texto. Encendido o apagado, no hay término medio.",
+        "section": "colors"
+      },
+      {
+        "name": "The Night Ink Rule",
+        "body": "Todo fondo, losa, tira y filete es el mismo azul tinta (tono 256) a otra luminosidad. Un escalón nuevo se saca de esa escala, nunca de un gris neutro ni de un negro puro.",
         "section": "colors"
       },
       {
@@ -396,9 +416,9 @@
       }
     ],
     "dos": [
-      "Do reservar el rojo de emisión (#ff4a2b) para pilotos de lo que está vivo, la acción principal de cada bloque y la respuesta a foco, selección y hover de enlaces de dato.",
-      "Do presentar cada pieza de contenido como una señal de multipantalla: losa #101010, filete de 1px #242424, tira de etiqueta inferior en mono con piloto y estado real.",
-      "Do separar pantallas con 1px de filete o 10px de plató; la profundidad es tonal.",
+      "Do reservar el rojo de emisión para pilotos de lo que está vivo, la acción principal de cada bloque y la respuesta a foco, selección y hover de enlaces de dato.",
+      "Do presentar cada pieza de contenido como una señal de multipantalla: losa (`tile`), filete de 1px (`line`), tira de etiqueta inferior en mono con piloto y estado real.",
+      "Do separar pantallas con 1px de filete o 10px de plató; la profundidad es tonal, en escalones de luminosidad del mismo azul tinta.",
       "Do escribir nombres, titulares y cifras grandes en Archivo condensada (62 % de anchura, 850) en mayúsculas, conservando la caja de los nombres de producto y del correo.",
       "Do poner horas, índices y estados en JetBrains Mono con cifras tabulares.",
       "Do abrir cada sección con filete superior y escaleta `NN / NN` en mono.",
@@ -408,10 +428,11 @@
       "Don't usar sombras, degradados morados, glassmorphism ni brillos para separar capas.",
       "Don't introducir un segundo color de acento en la web oscura; en las demos, el acento lo cambia solo la marca blanca.",
       "Don't usar el rojo como color decorativo de texto o de fondo de sección (la segunda línea de la frase del hero es la única excepción).",
-      "Don't encender un piloto en rojo para algo que no está vivo; el piloto apagado es #323232.",
+      "Don't encender un piloto en rojo para algo que no está vivo; el piloto apagado es `line-2`.",
       "Don't poner bordes laterales de color en las losas ni marcas de categoría sobre los titulares: la fila meta y la escaleta solo llevan datos (lugar, año, índice, estado).",
       "Don't usar logos de terceros ni emojis; iconos de trazo de 1,75 y texto.",
-      "Don't usar la tinta apagada (#6e6b66) para texto que haya que leer a tamaño pequeño."
+      "Don't usar la tinta apagada (`faint`) para texto; queda para el contorno del apellido.",
+      "Don't volver a grises neutros ni a negro puro: todo fondo, losa y filete sale de la escala de azul tinta (tono 256)."
     ]
   }
 }

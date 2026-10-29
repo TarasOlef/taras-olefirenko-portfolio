@@ -8,7 +8,7 @@ export function AnimatedBackground() {
   return (
     <div
       aria-hidden="true"
-      className="pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-[#05070d]"
+      className="pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-background"
     >
       <motion.div
         className="absolute -left-32 top-0 h-[34rem] w-[34rem] rounded-full bg-cyan-500/[0.055] blur-3xl"

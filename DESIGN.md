@@ -2,18 +2,18 @@
 name: Taras Olefirenko
 description: Software con IA, de la idea a producción, contado como una emisión en directo desde la sala de realización.
 colors:
-  tally: "#ff4a2b"
-  tally-foreground: "#140603"
-  background: "#080808"
-  tile: "#101010"
-  tile-2: "#161616"
-  label-strip: "#0b0b0b"
-  media-well: "#050505"
-  line: "#242424"
-  line-2: "#323232"
-  foreground: "#eeebe5"
-  muted-foreground: "#a39f97"
-  faint: "#6e6b66"
+  tally: "#fd5939"
+  tally-foreground: "#1e0805"
+  background: "#0a1525"
+  tile: "#111d2f"
+  tile-2: "#182638"
+  label-strip: "#0d1929"
+  media-well: "#040c19"
+  line: "#28364a"
+  line-2: "#3b4a5f"
+  foreground: "#f4f0e7"
+  muted-foreground: "#aeb8c7"
+  faint: "#758192"
 typography:
   display:
     fontFamily: "Archivo, Arial Narrow, sans-serif"
@@ -98,7 +98,7 @@ components:
     padding: "0 18px"
     height: "44px"
   button-primary-hover:
-    backgroundColor: "color-mix(in oklch, #ff4a2b, white 10%)"
+    backgroundColor: "color-mix(in oklch, #fd5939, white 10%)"
   button-outline:
     backgroundColor: "transparent"
     textColor: "{colors.foreground}"
@@ -164,14 +164,14 @@ components:
 
 **Creative North Star: "La sala de realización"**
 
-La web es una realización de televisión en directo vista desde el control: un plató negro, una pared de multipantalla donde cada proyecto es una señal con su etiqueta y su piloto, y un rótulo inferior que va pasando lo que ocurre. El visitante no lee una promesa, mira la emisión. Todo lo que no es señal (fondos, losas, filetes) se retira hacia el negro para que la imagen y el piloto rojo manden.
+La web es una realización de televisión en directo vista desde el control de noche: un plató en azul tinta, una pared de multipantalla donde cada proyecto es una señal con su etiqueta y su piloto, y un rótulo inferior que va pasando lo que ocurre. El visitante no lee una promesa, mira la emisión. Todo lo que no es señal (fondos, losas, filetes) se retira hacia ese azul de madrugada para que la imagen y el piloto rojo manden.
 
-La densidad es de mesa de mezclas: bloques grandes y rotundos de nombre y titular en Archivo condensada, y alrededor una capa fina de datos en mono (código de tiempo, escaleta, estado, etiqueta de pantalla) que da la sensación de que esto está funcionando ahora. Hay un solo color con voz, el rojo de emisión; el resto es una escala de grises neutros sobre tinta cálida. Sin sombras, sin degradados, sin cristal: la profundidad la ponen las losas un punto más claras que el plató y los filetes de 1px.
+La densidad es de mesa de mezclas: bloques grandes y rotundos de nombre y titular en Archivo condensada, y alrededor una capa fina de datos en mono (código de tiempo, escaleta, estado, etiqueta de pantalla) que da la sensación de que esto está funcionando ahora. Hay un solo color con voz, el rojo de emisión; el resto es una escala de azules tinta del mismo tono (OKLCH 256) que solo cambia en luminosidad, con tinta de papel cálida encima. El azul frío y el papel cálido hacen que el rojo, también cálido, salte sin tener que gritar. Sin sombras, sin degradados, sin cristal: la profundidad la ponen las losas un punto más claras que el plató y los filetes de 1px.
 
 El mismo sistema viste las demos con tema claro de serie (enseñan negocios reales) y, en marca blanca, con el color de la agencia en lugar del rojo. Ese tema claro está comprometido en el brief pero todavía no existe en el código: no hay tokens `.light` en `globals.css`, y no deben inventarse aquí antes de construirlo.
 
 **Key Characteristics:**
-- Plató casi negro con losas tonales y filetes de 1px, nunca sombras.
+- Plató en azul tinta de noche con losas tonales del mismo tono y filetes de 1px, nunca sombras.
 - Un único acento, el piloto rojo de emisión, reservado a lo que está en antena y a la acción principal.
 - Archivo condensada al 62 % de anchura y peso 850, en mayúsculas, como voz de rótulo.
 - Datos y etiquetas en JetBrains Mono, con cifras tabulares en horas e índices.
@@ -180,28 +180,30 @@ El mismo sistema viste las demos con tema claro de serie (enseñan negocios real
 
 ## Colors
 
-Negro de plató neutro con tinta ligeramente cálida y un solo rojo de emisión saturado.
+Sala de realización de noche: una escala de azules tinta en un solo tono (OKLCH 256, croma 0,03–0,04) que sube solo en luminosidad, tinta de papel cálida (tono 85) y un único rojo de emisión saturado (tono 33).
 
 ### Primary
-- **Rojo de emisión** (tally): el piloto «en antena». Enciende el punto del nombre en la barra, el bloque de etiqueta del rótulo inferior, los pilotos de las señales vivas, el botón principal, el anillo de foco, la selección de texto y el cambio de color al pasar por enlaces de dato (correo grande, «Caso», enlace del proyecto). Contraste sobre el plató de 5,98:1.
-- **Tinta sobre rojo** (tally-foreground): marrón casi negro para el texto y el punto parpadeante que van encima del rojo (5,93:1).
+- **Rojo de emisión** (tally): el piloto «en antena». Enciende el punto del nombre en la barra, el bloque de etiqueta del rótulo inferior, los pilotos de las señales vivas, el botón principal, el anillo de foco, la selección de texto y el cambio de color al pasar por enlaces de dato (correo grande, «Caso», enlace del proyecto). Contraste de 5,81:1 sobre el plató y 5,37:1 sobre la losa.
+- **Tinta sobre rojo** (tally-foreground): granate casi negro para el texto y el punto parpadeante que van encima del rojo (6,1:1).
 
 ### Neutral
-- **Negro de plató** (background): el suelo de toda la página, la barra fija y el rótulo inferior. También el `theme-color` del navegador.
-- **Losa** (tile): fondo de cada señal de la multipantalla.
+- **Azul tinta de noche** (background): el plató, suelo de toda la página, de la barra fija y del rótulo inferior. También el `theme-color` del navegador.
+- **Losa** (tile): fondo de cada señal de la multipantalla, un escalón de luminosidad por encima del plató.
 - **Losa encendida** (tile-2): fondo de hover de los botones de contorno y fantasma; también `muted`, `secondary` y `accent` en la capa shadcn.
-- **Tira de etiqueta** (label-strip): la franja inferior de cada señal y de cada pantalla secundaria, un punto más oscura que la losa. Hoy está escrita como literal en los componentes, no como propiedad personalizada.
-- **Pozo de imagen** (media-well): el fondo detrás de las capturas, más negro que el plató, para que la imagen se lea como pantalla apagada a su alrededor. También literal en los componentes.
+- **Tira de etiqueta** (label-strip): la franja inferior de cada señal y de cada pantalla secundaria, un punto más oscura que la losa y apenas más clara que el plató.
+- **Pozo de imagen** (media-well): el fondo detrás de las capturas, el azul más hondo del sistema, por debajo del plató, para que la imagen se lea como pantalla apagada a su alrededor.
 - **Filete** (line): bordes de losa, separadores de la barra, del rótulo y de las secciones, y la rejilla de 1px entre pantallas.
 - **Filete fuerte** (line-2): borde de los botones de contorno y de los inputs, marco de los teléfonos y piloto apagado.
-- **Tinta cálida** (foreground): texto principal y nombre (16,8:1).
-- **Tinta secundaria** (muted-foreground): textos de apoyo, navegación, datos del rótulo y etiquetas (7,6:1).
-- **Tinta apagada** (faint): el contorno de OLEFIRENKO y el código de señal PGM/PVW. Solo llega a 3,7:1 sobre la tira de etiqueta.
+- **Tinta de papel** (foreground): blanco roto cálido para el texto principal y el nombre (16,1:1 sobre el plató, 14,88:1 sobre la losa).
+- **Tinta secundaria** (muted-foreground): azul gris claro para textos de apoyo, navegación, datos del rótulo, etiquetas y el código de señal PGM/PVW (9,14:1 sobre el plató, 8,45:1 sobre la losa).
+- **Tinta apagada** (faint): solo el contorno de 1,5px de OLEFIRENKO (4,63:1 sobre el plató, 4,28:1 sobre la losa). No es color de texto.
 
 ### Named Rules
 **The Tally Rule.** El rojo significa «en antena» o «esta es la acción». Se usa en pilotos de lo que está vivo, en la acción principal de cada bloque y como respuesta a interacción (foco, selección, hover de enlace de dato). Hay una sola excepción, aprobada por Taras al elegir la dirección A: la segunda línea de la frase del hero va en rojo, como titular en antena. Fuera de eso, si un elemento rojo no está emitiendo ni es la acción principal, sobra.
 
-**The Dark Switch Rule.** Un piloto apagado es `line-2` (#323232), nunca rojo atenuado ni gris de texto. Encendido o apagado, no hay término medio.
+**The Dark Switch Rule.** Un piloto apagado es `line-2`, nunca rojo atenuado ni el color de un texto. Encendido o apagado, no hay término medio.
+
+**The Night Ink Rule.** Todo fondo, losa, tira y filete es el mismo azul tinta (tono 256) a otra luminosidad. Un escalón nuevo se saca de esa escala, nunca de un gris neutro ni de un negro puro.
 
 ## Typography
 
@@ -241,7 +243,7 @@ Puntos de corte: 640px (el reloj pierde los segundos y la palabra «Valencia», 
 
 ## Elevation & Depth
 
-Sistema plano. No hay ninguna `box-shadow`. La profundidad es tonal y de filete: plató (#080808) por debajo, losa (#101010) por encima, tira de etiqueta y pozo de imagen un punto por debajo de la losa, y filetes de 1px que dibujan cada borde. La barra fija se separa del contenido con su filete inferior y fondo opaco, sin desenfoque.
+Sistema plano. No hay ninguna `box-shadow`. La profundidad es tonal y de filete, siempre dentro del mismo azul tinta: el pozo de imagen es el fondo más hondo, luego el plató, la tira de etiqueta, la losa y la losa encendida, cada una un escalón de luminosidad por encima de la anterior, y filetes de 1px que dibujan cada borde. La barra fija se separa del contenido con su filete inferior y fondo opaco, sin desenfoque.
 
 ### Named Rules
 **The Monitor Wall Rule.** Las pantallas no flotan: se encajan. Se separan con 1px de filete o con 10px de plató, nunca con sombra, brillo ni cristal.
@@ -257,8 +259,8 @@ Pulsadores de mesa: píldoras compactas, firmes al pulsar.
 - **Shape:** píldora completa, 44px de alto (40px en la barra, 48px en grande), 18px de relleno lateral, 15px en Schibsted Grotesk 600, icono de 16px a 10px del texto.
 - **Primary:** rojo de emisión con tinta sobre rojo. Uno por bloque: «Escríbeme» en la barra, «Ver proyectos» en el hero, «Escribir un correo» en contacto, «Ir a la portada» en el 404.
 - **Hover / Focus:** el primario se aclara un 10 % hacia blanco en OKLCH; el foco es un anillo de 2px en rojo a 3px de distancia, común a todo el sitio. Al pulsar, escala a 0,97 en 150ms con ease-out.
-- **Outline:** borde de 1px `line-2`, texto en tinta cálida, fondo `tile-2` al pasar. Es la segunda acción («Hablemos», «Copiar correo», «Ver proyectos» en el 404).
-- **Ghost:** sin borde ni fondo, en tinta secundaria; al pasar toma `tile-2` y tinta cálida. Para salidas a terceros (LinkedIn, GitHub) con flecha diagonal.
+- **Outline:** borde de 1px `line-2`, texto en tinta de papel, fondo `tile-2` al pasar. Es la segunda acción («Hablemos», «Copiar correo», «Ver proyectos» en el 404).
+- **Ghost:** sin borde ni fondo, en tinta secundaria; al pasar toma `tile-2` y tinta de papel. Para salidas a terceros (LinkedIn, GitHub) con flecha diagonal.
 
 ### Chips
 - **Style:** chip de stack en mono 11px, borde de 1px `line`, redondeo de 3,6px, sin fondo, tinta secundaria. Solo informativo, no se pulsa.
@@ -271,7 +273,7 @@ Pulsadores de mesa: píldoras compactas, firmes al pulsar.
 - **Internal Padding:** 20px en el cuerpo; 12px a los lados de la tira.
 
 ### Navigation
-- **Barra fija:** 73px, fondo de plató opaco, filete inferior. A la izquierda el nombre en Archivo condensada de 18px con su piloto rojo; en el centro dos anclas en Schibsted 14px en tinta secundaria que pasan a tinta cálida al pasar; a la derecha el reloj de Valencia en mono 13px tabular y el botón primario pequeño. En móvil desaparecen las anclas y el reloj se queda en horas y minutos.
+- **Barra fija:** 73px, fondo de plató opaco, filete inferior. A la izquierda el nombre en Archivo condensada de 18px con su piloto rojo; en el centro dos anclas en Schibsted 14px en tinta secundaria que pasan a tinta de papel al pasar; a la derecha el reloj de Valencia en mono 13px tabular y el botón primario pequeño. En móvil desaparecen las anclas y el reloj se queda en horas y minutos.
 - **Pie:** filete superior, mono 12px en tinta secundaria: firma, reloj de Valencia y «Volver arriba».
 
 ### Señal de multipantalla (signature)
@@ -288,9 +290,9 @@ Dos curvas: `ease-out` (cubic-bezier(0.23, 1, 0.32, 1)) para entrar y `ease-in-o
 ## Do's and Don'ts
 
 ### Do:
-- **Do** reservar el rojo de emisión (#ff4a2b) para pilotos de lo que está vivo, la acción principal de cada bloque y la respuesta a foco, selección y hover de enlaces de dato.
-- **Do** presentar cada pieza de contenido como una señal de multipantalla: losa #101010, filete de 1px #242424, tira de etiqueta inferior en mono con piloto y estado real.
-- **Do** separar pantallas con 1px de filete o 10px de plató; la profundidad es tonal.
+- **Do** reservar el rojo de emisión para pilotos de lo que está vivo, la acción principal de cada bloque y la respuesta a foco, selección y hover de enlaces de dato.
+- **Do** presentar cada pieza de contenido como una señal de multipantalla: losa (`tile`), filete de 1px (`line`), tira de etiqueta inferior en mono con piloto y estado real.
+- **Do** separar pantallas con 1px de filete o 10px de plató; la profundidad es tonal, en escalones de luminosidad del mismo azul tinta.
 - **Do** escribir nombres, titulares y cifras grandes en Archivo condensada (62 % de anchura, 850) en mayúsculas, conservando la caja de los nombres de producto y del correo.
 - **Do** poner horas, índices y estados en JetBrains Mono con cifras tabulares.
 - **Do** abrir cada sección con filete superior y escaleta `NN / NN` en mono.
@@ -300,7 +302,8 @@ Dos curvas: `ease-out` (cubic-bezier(0.23, 1, 0.32, 1)) para entrar y `ease-in-o
 - **Don't** usar sombras, degradados morados, glassmorphism ni brillos para separar capas.
 - **Don't** introducir un segundo color de acento en la web oscura; en las demos, el acento lo cambia solo la marca blanca.
 - **Don't** usar el rojo como color decorativo de texto o de fondo de sección (la segunda línea de la frase del hero es la única excepción).
-- **Don't** encender un piloto en rojo para algo que no está vivo; el piloto apagado es #323232.
+- **Don't** encender un piloto en rojo para algo que no está vivo; el piloto apagado es `line-2`.
 - **Don't** poner bordes laterales de color en las losas ni marcas de categoría sobre los titulares: la fila meta y la escaleta solo llevan datos (lugar, año, índice, estado).
 - **Don't** usar logos de terceros ni emojis; iconos de trazo de 1,75 y texto.
-- **Don't** usar la tinta apagada (#6e6b66) para texto que haya que leer a tamaño pequeño.
+- **Don't** usar la tinta apagada (`faint`) para texto; queda para el contorno del apellido.
+- **Don't** volver a grises neutros ni a negro puro: todo fondo, losa y filete sale de la escala de azul tinta (tono 256).
